@@ -1,0 +1,122 @@
+{
+    "id": "even-or-odd",
+    "topic": "Conditionals",
+    "title": "Even or Odd",
+    "difficulty": "easy",
+    "tags": [
+        "conditionals",
+        "algorithm"
+    ],
+    "unlocked": true,
+    "concept": "Determine if a number is even or odd using the modulo operator.",
+    "example": "Input:\n5\n\nOutput:\nodd",
+    "prompt": "Write a program that reads an integer and prints 'even' or 'odd'.",
+    "languages": {
+        "javascript": {
+            "starter": "// Read a number and determine if it's even or odd\nconst num = 5; // Change this to test\n\nif (num % 2 === 0) {\n    console.log('even');\n} else {\n    console.log('odd');\n}",
+            "tests": [
+                {
+                    "description": "even number",
+                    "run": "(()=>{__RESET__(); const num=4; if(num%2===0) console.log('even'); else console.log('odd'); return __LOGS__[0]==='even';})()"
+                },
+                {
+                    "description": "odd number",
+                    "run": "(()=>{__RESET__(); const num=5; if(num%2===0) console.log('even'); else console.log('odd'); return __LOGS__[0]==='odd';})()"
+                },
+                {
+                    "description": "zero is even",
+                    "run": "(()=>{__RESET__(); const num=0; if(num%2===0) console.log('even'); else console.log('odd'); return __LOGS__[0]==='even';})()"
+                }
+            ]
+        },
+        "python": {
+            "starter": "# Read a number and determine if it's even or odd\nnum = int(input())\n\nif num % 2 == 0:\n    print('even')\nelse:\n    print('odd')",
+            "tests": [
+                {
+                    "description": "even number",
+                    "stdin": "4\n",
+                    "expected_output": "even\n"
+                },
+                {
+                    "description": "odd number",
+                    "stdin": "5\n",
+                    "expected_output": "odd\n"
+                },
+                {
+                    "description": "zero is even",
+                    "stdin": "0\n",
+                    "expected_output": "even\n"
+                }
+            ]
+        },
+        "cpp": {
+            "starter": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    int num;\n    cin >> num;\n    \n    if (num % 2 == 0) {\n        cout << \"even\" << endl;\n    } else {\n        cout << \"odd\" << endl;\n    }\n    \n    return 0;\n}",
+            "tests": [
+                {
+                    "description": "even number",
+                    "stdin": "4\n",
+                    "expected_output": "even\n"
+                },
+                {
+                    "description": "odd number",
+                    "stdin": "5\n",
+                    "expected_output": "odd\n"
+                },
+                {
+                    "description": "zero is even",
+                    "stdin": "0\n",
+                    "expected_output": "even\n"
+                }
+            ]
+        },
+        "java": {
+            "starter": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int num = sc.nextInt();\n        \n        if (num % 2 == 0) {\n            System.out.println(\"even\");\n        } else {\n            System.out.println(\"odd\");\n        }\n    }\n}",
+            "tests": [
+                {
+                    "description": "even number",
+                    "stdin": "4\n",
+                    "expected_output": "even\n"
+                },
+                {
+                    "description": "odd number",
+                    "stdin": "5\n",
+                    "expected_output": "odd\n"
+                },
+                {
+                    "description": "zero is even",
+                    "stdin": "0\n",
+                    "expected_output": "even\n"
+                }
+            ]
+        }
+    },
+    "starter": "// Read a number and determine if it's even or odd\nconst num = 5; // Change this to test\n\nif (num % 2 === 0) {\n    console.log('even');\n} else {\n    console.log('odd');\n}",
+    "tests": [
+        {
+            "description": "even number",
+            "run": "(()=>{__RESET__(); const num=4; if(num%2===0) console.log('even'); else console.log('odd'); return __LOGS__[0]==='even';})()"
+        },
+        {
+            "description": "odd number",
+            "run": "(()=>{__RESET__(); const num=5; if(num%2===0) console.log('even'); else console.log('odd'); return __LOGS__[0]==='odd';})()"
+        },
+        {
+            "description": "zero is even",
+            "run": "(()=>{__RESET__(); const num=0; if(num%2===0) console.log('even'); else console.log('odd'); return __LOGS__[0]==='even';})()"
+        }
+    ],
+    "learn": {
+        "intro": "This challenge teaches conditional statements and the modulo operator.",
+        "bullets": [
+            "Use the modulo operator (%) to check remainder",
+            "If remainder is 0, the number is even",
+            "If remainder is 1, the number is odd",
+            "Handle edge cases like zero"
+        ]
+    },
+    "tips": [
+        "Use num % 2 === 0 to check if even",
+        "Remember that zero is considered even",
+        "Test with both positive and negative numbers"
+    ]
+}

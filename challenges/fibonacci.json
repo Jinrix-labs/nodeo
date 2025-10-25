@@ -1,0 +1,107 @@
+{
+    "id": "fibonacci",
+    "topic": "Algorithms",
+    "title": "Fibonacci Sequence",
+    "difficulty": "medium",
+    "tags": [
+        "algorithms",
+        "recursion",
+        "math"
+    ],
+    "unlocked": true,
+    "concept": "Generate the Fibonacci sequence where each number is the sum of the two preceding ones.",
+    "example": "Input:\n5\n\nOutput:\n0 1 1 2 3",
+    "prompt": "Write a program that generates the first n Fibonacci numbers.",
+    "languages": {
+        "javascript": {
+            "starter": "function fibonacci(n) {\n  // your code here\n}\n\nconsole.log(fibonacci(5));",
+            "tests": [
+                {
+                    "description": "function exists",
+                    "run": "typeof fibonacci === 'function'"
+                },
+                {
+                    "description": "first 5 numbers",
+                    "run": "(()=>{__RESET__(); console.log(fibonacci(5)); return __LOGS__[0]==='0 1 1 2 3';})()"
+                },
+                {
+                    "description": "first 3 numbers",
+                    "run": "(()=>{__RESET__(); console.log(fibonacci(3)); return __LOGS__[0]==='0 1 1';})()"
+                }
+            ]
+        },
+        "python": {
+            "starter": "def fibonacci(n):\n    # your code here\n    pass\n\nn = int(input())\nprint(fibonacci(n))",
+            "tests": [
+                {
+                    "description": "first 5 numbers",
+                    "stdin": "5\n",
+                    "expected_output": "0 1 1 2 3\n"
+                },
+                {
+                    "description": "first 3 numbers",
+                    "stdin": "3\n",
+                    "expected_output": "0 1 1\n"
+                }
+            ]
+        },
+        "cpp": {
+            "starter": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    \n    // your code here\n    \n    return 0;\n}",
+            "tests": [
+                {
+                    "description": "first 5 numbers",
+                    "stdin": "5\n",
+                    "expected_output": "0 1 1 2 3\n"
+                },
+                {
+                    "description": "first 3 numbers",
+                    "stdin": "3\n",
+                    "expected_output": "0 1 1\n"
+                }
+            ]
+        },
+        "java": {
+            "starter": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        \n        // your code here\n    }\n}",
+            "tests": [
+                {
+                    "description": "first 5 numbers",
+                    "stdin": "5\n",
+                    "expected_output": "0 1 1 2 3\n"
+                },
+                {
+                    "description": "first 3 numbers",
+                    "stdin": "3\n",
+                    "expected_output": "0 1 1\n"
+                }
+            ]
+        }
+    },
+    "starter": "function fibonacci(n) {\n  // your code here\n}\n\nconsole.log(fibonacci(5));",
+    "tests": [
+        {
+            "description": "function exists",
+            "run": "typeof fibonacci === 'function'"
+        },
+        {
+            "description": "first 5 numbers",
+            "run": "(()=>{__RESET__(); console.log(fibonacci(5)); return __LOGS__[0]==='0 1 1 2 3';})()"
+        },
+        {
+            "description": "first 3 numbers",
+            "run": "(()=>{__RESET__(); console.log(fibonacci(3)); return __LOGS__[0]==='0 1 1';})()"
+        }
+    ],
+    "learn": {
+        "intro": "The Fibonacci sequence is a classic algorithm problem that teaches recursion and iteration.",
+        "bullets": [
+            "Start with 0 and 1 as the first two numbers",
+            "Each subsequent number is the sum of the previous two",
+            "Use a loop or recursion to generate the sequence"
+        ]
+    },
+    "tips": [
+        "Start with the base cases (0 and 1)",
+        "Use a loop to build the sequence iteratively",
+        "Consider both recursive and iterative approaches"
+    ]
+}
