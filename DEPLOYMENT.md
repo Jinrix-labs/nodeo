@@ -18,10 +18,10 @@
    ```
 
 2. **Ensure all files are committed:**
-   - `vercel.json` ✅
    - `package.json` with prebuild script ✅
    - `src/challenges/nvidiaPack.ts` ✅
    - All source files ✅
+   - Vercel will auto-detect Vite configuration ✅
 
 ### Step 2: Deploy to Vercel
 
@@ -31,7 +31,12 @@
 2. Click "New Project"
 3. Import your GitHub repository
 4. Vercel will auto-detect it's a Vite project
-5. Click "Deploy"
+5. **Build Settings** (should auto-detect):
+   - Framework Preset: Vite
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+   - Install Command: `npm install`
+6. Click "Deploy"
 
 #### Option B: Vercel CLI
 

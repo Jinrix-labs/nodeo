@@ -12,12 +12,12 @@
 
 ### Files Ready
 
-- [x] `vercel.json` - Vercel configuration
 - [x] `package.json` - Build scripts configured
 - [x] `.env.example` - Environment variables documented
 - [x] `.vercelignore` - Exclude unnecessary files
 - [x] `DEPLOYMENT.md` - Complete deployment guide
 - [x] `api/health.js` - Health check endpoint
+- [x] Vite auto-detection - Vercel will handle configuration
 
 ### Build Process
 
