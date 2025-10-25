@@ -1,0 +1,53 @@
+{
+  "id": "factorial",
+  "topic": "Loops",
+  "title": "Factorial",
+  "difficulty": "easy",
+  "tags": [
+    "warmup"
+  ],
+  "concept": "Calculate factorial of a number using loops.",
+  "example": "Input:\n5\n\nOutput:\n120",
+  "prompt": "Read an integer n and print n! (n factorial).",
+  "languages": {
+    "javascript": {
+      "starter": "const n = 5;\nlet fact = 1;\nfor(let i=1;i<=n;i++) fact*=i;\nconsole.log(fact);",
+      "tests": [
+        {
+          "description": "factorial 5",
+          "run": "(()=>{__RESET__();const n=5;let f=1;for(let i=1;i<=n;i++)f*=i;console.log(f);return __LOGS__[0]==='120';})()"
+        }
+      ]
+    },
+    "python": {
+      "starter": "n=int(input())\nf=1\nfor i in range(1,n+1):f*=i\nprint(f)",
+      "tests": [
+        {
+          "description": "factorial 5",
+          "stdin": "5\n",
+          "expected_output": "120\n"
+        }
+      ]
+    },
+    "cpp": {
+      "starter": "#include <bits/stdc++.h>\nusing namespace std;\nint main(){int n;cin>>n;long long f=1;for(int i=1;i<=n;i++)f*=i;cout<<f<<endl;}",
+      "tests": [
+        {
+          "description": "factorial 5",
+          "stdin": "5\n",
+          "expected_output": "120\n"
+        }
+      ]
+    },
+    "java": {
+      "starter": "import java.util.*;public class Main{public static void main(String[] args){Scanner sc=new Scanner(System.in);int n=sc.nextInt();long f=1;for(int i=1;i<=n;i++)f*=i;System.out.println(f);}}",
+      "tests": [
+        {
+          "description": "factorial 5",
+          "stdin": "5\n",
+          "expected_output": "120\n"
+        }
+      ]
+    }
+  }
+}

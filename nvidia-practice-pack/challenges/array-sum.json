@@ -1,0 +1,33 @@
+{
+  "id": "array-sum",
+  "topic": "Arrays",
+  "title": "Array Sum",
+  "difficulty": "easy",
+  "tags": [
+    "warmup"
+  ],
+  "concept": "Sum all elements in an array.",
+  "example": "Input:\n5\n1 2 3 4 5\n\nOutput:\n15",
+  "prompt": "Read n, then n integers, and print their sum.",
+  "languages": {
+    "javascript": {
+      "starter": "const arr=[1,2,3,4,5];const sum=arr.reduce((a,b)=>a+b,0);console.log(sum);",
+      "tests": [
+        {
+          "description": "sum 1..5=15",
+          "run": "(()=>{__RESET__();const arr=[1,2,3,4,5];console.log(arr.reduce((a,b)=>a+b,0));return __LOGS__[0]==='15';})()"
+        }
+      ]
+    },
+    "python": {
+      "starter": "n=int(input())\narr=list(map(int,input().split()))\nprint(sum(arr))",
+      "tests": [
+        {
+          "description": "sum 1..5=15",
+          "stdin": "5\n1 2 3 4 5\n",
+          "expected_output": "15\n"
+        }
+      ]
+    }
+  }
+}

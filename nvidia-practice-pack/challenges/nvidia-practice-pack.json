@@ -1,0 +1,1084 @@
+[
+    {
+        "id": "add-two-numbers",
+        "topic": "Math",
+        "title": "Add Two Numbers",
+        "difficulty": "easy",
+        "tags": [
+            "warmup"
+        ],
+        "concept": "Read two numbers and print their sum.",
+        "example": "Input:\n2 3\n\nOutput:\n5",
+        "prompt": "Read two integers and output their sum.",
+        "languages": {
+            "javascript": {
+                "starter": "const a = 2;\nconst b = 3;\nconsole.log(a + b);",
+                "tests": [
+                    {
+                        "description": "2+3=5",
+                        "run": "(()=>{__RESET__(); const a=2,b=3; console.log(a+b); return __LOGS__[0]==='5';})()"
+                    },
+                    {
+                        "description": "0+0=0",
+                        "run": "(()=>{__RESET__(); const a=0,b=0; console.log(a+b); return __LOGS__[0]==='0';})()"
+                    }
+                ]
+            },
+            "python": {
+                "starter": "a,b = map(int,input().split())\nprint(a+b)",
+                "tests": [
+                    {
+                        "description": "2+3=5",
+                        "stdin": "2 3\n",
+                        "expected_output": "5\n"
+                    },
+                    {
+                        "description": "0+0=0",
+                        "stdin": "0 0\n",
+                        "expected_output": "0\n"
+                    }
+                ]
+            },
+            "cpp": {
+                "starter": "#include <bits/stdc++.h>\nusing namespace std;\nint main(){int a,b;cin>>a>>b;cout<<a+b<<endl;return 0;}",
+                "tests": [
+                    {
+                        "description": "2+3=5",
+                        "stdin": "2 3\n",
+                        "expected_output": "5\n"
+                    },
+                    {
+                        "description": "0+0=0",
+                        "stdin": "0 0\n",
+                        "expected_output": "0\n"
+                    }
+                ]
+            },
+            "java": {
+                "starter": "import java.util.*;public class Main{public static void main(String[] args){Scanner sc=new Scanner(System.in);int a=sc.nextInt();int b=sc.nextInt();System.out.println(a+b);}}",
+                "tests": [
+                    {
+                        "description": "2+3=5",
+                        "stdin": "2 3\n",
+                        "expected_output": "5\n"
+                    },
+                    {
+                        "description": "0+0=0",
+                        "stdin": "0 0\n",
+                        "expected_output": "0\n"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "even-or-odd",
+        "topic": "Conditionals",
+        "title": "Even or Odd",
+        "difficulty": "easy",
+        "tags": [
+            "warmup"
+        ],
+        "concept": "Check if a number is even or odd.",
+        "example": "Input:\n5\n\nOutput:\nOdd",
+        "prompt": "Read an integer. Print 'Even' if it's even, otherwise 'Odd'.",
+        "languages": {
+            "javascript": {
+                "starter": "const n = 5;\nif (n % 2 === 0) console.log('Even'); else console.log('Odd');",
+                "tests": [
+                    {
+                        "description": "5 is odd",
+                        "run": "(()=>{__RESET__();const n=5;if(n%2===0)console.log('Even');else console.log('Odd');return __LOGS__[0]==='Odd';})()"
+                    },
+                    {
+                        "description": "4 is even",
+                        "run": "(()=>{__RESET__();const n=4;if(n%2===0)console.log('Even');else console.log('Odd');return __LOGS__[0]==='Even';})()"
+                    }
+                ]
+            },
+            "python": {
+                "starter": "n=int(input())\nprint('Even' if n%2==0 else 'Odd')",
+                "tests": [
+                    {
+                        "description": "5 is odd",
+                        "stdin": "5\n",
+                        "expected_output": "Odd\n"
+                    },
+                    {
+                        "description": "4 is even",
+                        "stdin": "4\n",
+                        "expected_output": "Even\n"
+                    }
+                ]
+            },
+            "cpp": {
+                "starter": "#include <bits/stdc++.h>\nusing namespace std;\nint main(){int n;cin>>n;if(n%2==0)cout<<\"Even\"<<endl;else cout<<\"Odd\"<<endl;}",
+                "tests": [
+                    {
+                        "description": "5 is odd",
+                        "stdin": "5\n",
+                        "expected_output": "Odd\n"
+                    },
+                    {
+                        "description": "4 is even",
+                        "stdin": "4\n",
+                        "expected_output": "Even\n"
+                    }
+                ]
+            },
+            "java": {
+                "starter": "import java.util.*;public class Main{public static void main(String[] args){Scanner sc=new Scanner(System.in);int n=sc.nextInt();System.out.println(n%2==0?\"Even\":\"Odd\");}}",
+                "tests": [
+                    {
+                        "description": "5 is odd",
+                        "stdin": "5\n",
+                        "expected_output": "Odd\n"
+                    },
+                    {
+                        "description": "4 is even",
+                        "stdin": "4\n",
+                        "expected_output": "Even\n"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "max-of-three",
+        "topic": "Conditionals",
+        "title": "Max of Three",
+        "difficulty": "easy",
+        "tags": [
+            "warmup"
+        ],
+        "concept": "Find the maximum of three numbers.",
+        "example": "Input:\n3 5 2\n\nOutput:\n5",
+        "prompt": "Read three integers and print the largest.",
+        "languages": {
+            "javascript": {
+                "starter": "const a = 3, b = 5, c = 2;\nconsole.log(Math.max(a,b,c));",
+                "tests": [
+                    {
+                        "description": "max(3,5,2)=5",
+                        "run": "(()=>{__RESET__();const a=3,b=5,c=2;console.log(Math.max(a,b,c));return __LOGS__[0]==='5';})()"
+                    }
+                ]
+            },
+            "python": {
+                "starter": "a,b,c=map(int,input().split())\nprint(max(a,b,c))",
+                "tests": [
+                    {
+                        "description": "max(3,5,2)=5",
+                        "stdin": "3 5 2\n",
+                        "expected_output": "5\n"
+                    }
+                ]
+            },
+            "cpp": {
+                "starter": "#include <bits/stdc++.h>\nusing namespace std;\nint main(){int a,b,c;cin>>a>>b>>c;cout<<max({a,b,c})<<endl;}",
+                "tests": [
+                    {
+                        "description": "max(3,5,2)=5",
+                        "stdin": "3 5 2\n",
+                        "expected_output": "5\n"
+                    }
+                ]
+            },
+            "java": {
+                "starter": "import java.util.*;public class Main{public static void main(String[] args){Scanner sc=new Scanner(System.in);int a=sc.nextInt(),b=sc.nextInt(),c=sc.nextInt();System.out.println(Math.max(a,Math.max(b,c)));}}",
+                "tests": [
+                    {
+                        "description": "max(3,5,2)=5",
+                        "stdin": "3 5 2\n",
+                        "expected_output": "5\n"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "reverse-string",
+        "topic": "Strings",
+        "title": "Reverse a String",
+        "difficulty": "easy",
+        "tags": [
+            "warmup"
+        ],
+        "concept": "Reverse the characters in a string.",
+        "example": "Input:\nhello\n\nOutput:\nolleh",
+        "prompt": "Read a string and print it in reverse order.",
+        "languages": {
+            "javascript": {
+                "starter": "const s = 'hello';\nconsole.log(s.split('').reverse().join(''));",
+                "tests": [
+                    {
+                        "description": "reverse hello",
+                        "run": "(()=>{__RESET__();const s='hello';console.log(s.split('').reverse().join(''));return __LOGS__[0]==='olleh';})()"
+                    }
+                ]
+            },
+            "python": {
+                "starter": "s = input()\nprint(s[::-1])",
+                "tests": [
+                    {
+                        "description": "reverse hello",
+                        "stdin": "hello\n",
+                        "expected_output": "olleh\n"
+                    }
+                ]
+            },
+            "cpp": {
+                "starter": "#include <bits/stdc++.h>\nusing namespace std;\nint main(){string s;cin>>s;reverse(s.begin(),s.end());cout<<s<<endl;}",
+                "tests": [
+                    {
+                        "description": "reverse hello",
+                        "stdin": "hello\n",
+                        "expected_output": "olleh\n"
+                    }
+                ]
+            },
+            "java": {
+                "starter": "import java.util.*;public class Main{public static void main(String[] args){Scanner sc=new Scanner(System.in);String s=sc.nextLine();System.out.println(new StringBuilder(s).reverse().toString());}}",
+                "tests": [
+                    {
+                        "description": "reverse hello",
+                        "stdin": "hello\n",
+                        "expected_output": "olleh\n"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "palindrome-check",
+        "topic": "Strings",
+        "title": "Palindrome Check",
+        "difficulty": "easy",
+        "tags": [
+            "warmup"
+        ],
+        "concept": "Check if a string reads the same forward and backward.",
+        "example": "Input:\nracecar\n\nOutput:\nYES",
+        "prompt": "Print YES if the string is a palindrome, else NO.",
+        "languages": {
+            "javascript": {
+                "starter": "const s='racecar';\nconsole.log(s===s.split('').reverse().join('')?'YES':'NO');",
+                "tests": [
+                    {
+                        "description": "palindrome racecar",
+                        "run": "(()=>{__RESET__();const s='racecar';console.log(s===s.split('').reverse().join('')?'YES':'NO');return __LOGS__[0]==='YES';})()"
+                    },
+                    {
+                        "description": "not palindrome",
+                        "run": "(()=>{__RESET__();const s='hello';console.log(s===s.split('').reverse().join('')?'YES':'NO');return __LOGS__[0]==='NO';})()"
+                    }
+                ]
+            },
+            "python": {
+                "starter": "s=input().strip()\nprint('YES' if s==s[::-1] else 'NO')",
+                "tests": [
+                    {
+                        "description": "palindrome racecar",
+                        "stdin": "racecar\n",
+                        "expected_output": "YES\n"
+                    },
+                    {
+                        "description": "not palindrome",
+                        "stdin": "hello\n",
+                        "expected_output": "NO\n"
+                    }
+                ]
+            },
+            "cpp": {
+                "starter": "#include <bits/stdc++.h>\nusing namespace std;\nint main(){string s;cin>>s;string r=s;reverse(r.begin(),r.end());cout<<(s==r?\"YES\":\"NO\")<<endl;}",
+                "tests": [
+                    {
+                        "description": "palindrome racecar",
+                        "stdin": "racecar\n",
+                        "expected_output": "YES\n"
+                    },
+                    {
+                        "description": "not palindrome",
+                        "stdin": "hello\n",
+                        "expected_output": "NO\n"
+                    }
+                ]
+            },
+            "java": {
+                "starter": "import java.util.*;public class Main{public static void main(String[] args){Scanner sc=new Scanner(System.in);String s=sc.nextLine();String r=new StringBuilder(s).reverse().toString();System.out.println(s.equals(r)?\"YES\":\"NO\");}}",
+                "tests": [
+                    {
+                        "description": "palindrome racecar",
+                        "stdin": "racecar\n",
+                        "expected_output": "YES\n"
+                    },
+                    {
+                        "description": "not palindrome",
+                        "stdin": "hello\n",
+                        "expected_output": "NO\n"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "factorial",
+        "topic": "Loops",
+        "title": "Factorial",
+        "difficulty": "easy",
+        "tags": [
+            "warmup"
+        ],
+        "concept": "Calculate factorial of a number using loops.",
+        "example": "Input:\n5\n\nOutput:\n120",
+        "prompt": "Read an integer n and print n! (n factorial).",
+        "languages": {
+            "javascript": {
+                "starter": "const n = 5;\nlet fact = 1;\nfor(let i=1;i<=n;i++) fact*=i;\nconsole.log(fact);",
+                "tests": [
+                    {
+                        "description": "factorial 5",
+                        "run": "(()=>{__RESET__();const n=5;let f=1;for(let i=1;i<=n;i++)f*=i;console.log(f);return __LOGS__[0]==='120';})()"
+                    }
+                ]
+            },
+            "python": {
+                "starter": "n=int(input())\nf=1\nfor i in range(1,n+1):f*=i\nprint(f)",
+                "tests": [
+                    {
+                        "description": "factorial 5",
+                        "stdin": "5\n",
+                        "expected_output": "120\n"
+                    }
+                ]
+            },
+            "cpp": {
+                "starter": "#include <bits/stdc++.h>\nusing namespace std;\nint main(){int n;cin>>n;long long f=1;for(int i=1;i<=n;i++)f*=i;cout<<f<<endl;}",
+                "tests": [
+                    {
+                        "description": "factorial 5",
+                        "stdin": "5\n",
+                        "expected_output": "120\n"
+                    }
+                ]
+            },
+            "java": {
+                "starter": "import java.util.*;public class Main{public static void main(String[] args){Scanner sc=new Scanner(System.in);int n=sc.nextInt();long f=1;for(int i=1;i<=n;i++)f*=i;System.out.println(f);}}",
+                "tests": [
+                    {
+                        "description": "factorial 5",
+                        "stdin": "5\n",
+                        "expected_output": "120\n"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "fibonacci",
+        "topic": "Loops",
+        "title": "Fibonacci Sequence",
+        "difficulty": "easy",
+        "tags": [
+            "warmup"
+        ],
+        "concept": "Generate the Fibonacci sequence up to n terms.",
+        "example": "Input:\n5\n\nOutput:\n0 1 1 2 3",
+        "prompt": "Read n and print the first n Fibonacci numbers (space separated).",
+        "languages": {
+            "javascript": {
+                "starter": "const n=5;let a=0,b=1,res=[];for(let i=0;i<n;i++){res.push(a);[a,b]=[b,a+b];}console.log(res.join(' '));",
+                "tests": [
+                    {
+                        "description": "fib 5",
+                        "run": "(()=>{__RESET__();const n=5;let a=0,b=1,res=[];for(let i=0;i<n;i++){res.push(a);[a,b]=[b,a+b];}console.log(res.join(' '));return __LOGS__[0]==='0 1 1 2 3';})()"
+                    }
+                ]
+            },
+            "python": {
+                "starter": "n=int(input())\na,b=0,1\nres=[]\nfor i in range(n):\n    res.append(str(a))\n    a,b=b,a+b\nprint(' '.join(res))",
+                "tests": [
+                    {
+                        "description": "fib 5",
+                        "stdin": "5\n",
+                        "expected_output": "0 1 1 2 3\n"
+                    }
+                ]
+            },
+            "cpp": {
+                "starter": "#include <bits/stdc++.h>\nusing namespace std;\nint main(){int n;cin>>n;long long a=0,b=1;for(int i=0;i<n;i++){cout<<a<<(i==n-1?\"\\n\":\" \");long long t=a;a=b;b+=t;}}",
+                "tests": [
+                    {
+                        "description": "fib 5",
+                        "stdin": "5\n",
+                        "expected_output": "0 1 1 2 3\n"
+                    }
+                ]
+            },
+            "java": {
+                "starter": "import java.util.*;public class Main{public static void main(String[] args){Scanner sc=new Scanner(System.in);int n=sc.nextInt();long a=0,b=1;for(int i=0;i<n;i++){System.out.print(a+(i==n-1?\"\\n\":\" \"));long t=a;a=b;b+=t;}}}",
+                "tests": [
+                    {
+                        "description": "fib 5",
+                        "stdin": "5\n",
+                        "expected_output": "0 1 1 2 3\n"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "find-number",
+        "topic": "Search",
+        "title": "Find Number",
+        "difficulty": "easy",
+        "tags": [
+            "nvidia-set"
+        ],
+        "concept": "Check whether a given number exists in an array.",
+        "example": "Input:\n5\n1 2 3 4 5\n4\n\nOutput:\nYES",
+        "prompt": "Read n, then n integers. Read target x. Print YES if x is in the array, else NO.",
+        "languages": {
+            "javascript": {
+                "starter": "const arr = [1,2,3,4,5];\nconst x = 4;\nconsole.log(arr.includes(x)?'YES':'NO');",
+                "tests": [
+                    {
+                        "description": "4 in array",
+                        "run": "(()=>{__RESET__();const arr=[1,2,3,4,5];const x=4;console.log(arr.includes(x)?'YES':'NO');return __LOGS__[0]==='YES';})()"
+                    },
+                    {
+                        "description": "99 not in array",
+                        "run": "(()=>{__RESET__();const arr=[1,2,3,4,5];const x=99;console.log(arr.includes(x)?'YES':'NO');return __LOGS__[0]==='NO';})()"
+                    }
+                ]
+            },
+            "python": {
+                "starter": "n=int(input())\narr=list(map(int,input().split()))\nx=int(input())\nprint('YES' if x in arr else 'NO')",
+                "tests": [
+                    {
+                        "description": "4 in array",
+                        "stdin": "5\n1 2 3 4 5\n4\n",
+                        "expected_output": "YES\n"
+                    },
+                    {
+                        "description": "99 not in array",
+                        "stdin": "5\n1 2 3 4 5\n99\n",
+                        "expected_output": "NO\n"
+                    }
+                ]
+            },
+            "cpp": {
+                "starter": "#include <bits/stdc++.h>\nusing namespace std;\nint main(){int n;cin>>n;vector<int>a(n);for(int i=0;i<n;i++)cin>>a[i];int x;cin>>x;cout<<(find(a.begin(),a.end(),x)!=a.end()?\"YES\":\"NO\")<<endl;}",
+                "tests": [
+                    {
+                        "description": "4 in array",
+                        "stdin": "5\n1 2 3 4 5\n4\n",
+                        "expected_output": "YES\n"
+                    },
+                    {
+                        "description": "99 not in array",
+                        "stdin": "5\n1 2 3 4 5\n99\n",
+                        "expected_output": "NO\n"
+                    }
+                ]
+            },
+            "java": {
+                "starter": "import java.util.*;public class Main{public static void main(String[] args){Scanner sc=new Scanner(System.in);int n=sc.nextInt();int[]a=new int[n];for(int i=0;i<n;i++)a[i]=sc.nextInt();int x=sc.nextInt();boolean f=false;for(int v:a)if(v==x)f=true;System.out.println(f?\"YES\":\"NO\");}}",
+                "tests": [
+                    {
+                        "description": "4 in array",
+                        "stdin": "5\n1 2 3 4 5\n4\n",
+                        "expected_output": "YES\n"
+                    },
+                    {
+                        "description": "99 not in array",
+                        "stdin": "5\n1 2 3 4 5\n99\n",
+                        "expected_output": "NO\n"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "odd-numbers",
+        "topic": "Loops",
+        "title": "Odd Numbers",
+        "difficulty": "easy",
+        "tags": [
+            "nvidia-set"
+        ],
+        "concept": "Print all odd numbers between a and b inclusive.",
+        "example": "Input:\n2 9\n\nOutput:\n3 5 7 9",
+        "prompt": "Print all odd numbers between a and b inclusive (space separated).",
+        "languages": {
+            "javascript": {
+                "starter": "const a=2,b=9;let res=[];for(let i=a;i<=b;i++)if(i%2!==0)res.push(i);console.log(res.join(' '));",
+                "tests": [
+                    {
+                        "description": "2 to 9 odds",
+                        "run": "(()=>{__RESET__();const a=2,b=9;let r=[];for(let i=a;i<=b;i++)if(i%2!==0)r.push(i);console.log(r.join(' '));return __LOGS__[0]==='3 5 7 9';})()"
+                    }
+                ]
+            },
+            "python": {
+                "starter": "a,b=map(int,input().split())\nres=[str(i) for i in range(a,b+1) if i%2!=0]\nprint(' '.join(res))",
+                "tests": [
+                    {
+                        "description": "2 to 9 odds",
+                        "stdin": "2 9\n",
+                        "expected_output": "3 5 7 9\n"
+                    }
+                ]
+            },
+            "cpp": {
+                "starter": "#include <bits/stdc++.h>\nusing namespace std;\nint main(){int a,b;cin>>a>>b;for(int i=a;i<=b;i++)if(i%2!=0)cout<<i<<(i<b-1?\" \":\"\");cout<<endl;}",
+                "tests": [
+                    {
+                        "description": "2 to 9 odds",
+                        "stdin": "2 9\n",
+                        "expected_output": "3 5 7 9\n"
+                    }
+                ]
+            },
+            "java": {
+                "starter": "import java.util.*;public class Main{public static void main(String[] args){Scanner sc=new Scanner(System.in);int a=sc.nextInt(),b=sc.nextInt();for(int i=a;i<=b;i++)if(i%2!=0)System.out.print(i+(i<b?\" \":\"\\n\"));}}",
+                "tests": [
+                    {
+                        "description": "2 to 9 odds",
+                        "stdin": "2 9\n",
+                        "expected_output": "3 5 7 9\n"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "counting-valleys",
+        "topic": "Loops",
+        "title": "Counting Valleys",
+        "difficulty": "medium",
+        "tags": [
+            "nvidia-set"
+        ],
+        "concept": "Count the number of valleys in a hike represented by U/D steps.",
+        "example": "Input:\n8\nUDDDUDUU\n\nOutput:\n1",
+        "prompt": "Given the steps of a hike, count the number of valleys.",
+        "languages": {
+            "javascript": {
+                "starter": "const steps='UDDDUDUU';let lvl=0,valleys=0;for(const s of steps){if(s==='U')lvl++;else lvl--;if(lvl===0&&s==='U')valleys++;}console.log(valleys);",
+                "tests": [
+                    {
+                        "description": "1 valley",
+                        "run": "(()=>{__RESET__();const steps='UDDDUDUU';let lvl=0,val=0;for(const s of steps){if(s==='U')lvl++;else lvl--;if(lvl===0&&s==='U')val++;}console.log(val);return __LOGS__[0]==='1';})()"
+                    }
+                ]
+            },
+            "python": {
+                "starter": "n=int(input())\nsteps=input().strip()\nlevel=0\nvalleys=0\nfor s in steps:\n    if s=='U': level+=1\n    else: level-=1\n    if level==0 and s=='U': valleys+=1\nprint(valleys)",
+                "tests": [
+                    {
+                        "description": "1 valley",
+                        "stdin": "8\nUDDDUDUU\n",
+                        "expected_output": "1\n"
+                    }
+                ]
+            },
+            "cpp": {
+                "starter": "#include <bits/stdc++.h>\nusing namespace std;\nint main(){int n;cin>>n;string s;cin>>s;int lvl=0,v=0;for(char c:s){if(c=='U')lvl++;else lvl--;if(lvl==0&&c=='U')v++;}cout<<v<<endl;}",
+                "tests": [
+                    {
+                        "description": "1 valley",
+                        "stdin": "8\nUDDDUDUU\n",
+                        "expected_output": "1\n"
+                    }
+                ]
+            },
+            "java": {
+                "starter": "import java.util.*;public class Main{public static void main(String[] args){Scanner sc=new Scanner(System.in);int n=sc.nextInt();String s=sc.next();int lvl=0,v=0;for(char c:s.toCharArray()){if(c=='U')lvl++;else lvl--;if(lvl==0&&c=='U')v++;}System.out.println(v);}}",
+                "tests": [
+                    {
+                        "description": "1 valley",
+                        "stdin": "8\nUDDDUDUU\n",
+                        "expected_output": "1\n"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "two-sum",
+        "topic": "Arrays",
+        "title": "Two Sum",
+        "difficulty": "medium",
+        "tags": [
+            "nvidia-set"
+        ],
+        "concept": "Find if any two numbers sum to a target.",
+        "example": "Input:\n4\n2 7 11 15\n9\n\nOutput:\nYES",
+        "prompt": "Return YES if any pair sums to the target, else NO.",
+        "languages": {
+            "javascript": {
+                "starter": "const arr=[2,7,11,15];const t=9;let seen=new Set();let ok=false;for(const n of arr){if(seen.has(t-n))ok=true;seen.add(n);}console.log(ok?'YES':'NO');",
+                "tests": [
+                    {
+                        "description": "2+7=9 works",
+                        "run": "(()=>{__RESET__();const arr=[2,7,11,15];const t=9;let seen=new Set(),ok=false;for(const n of arr){if(seen.has(t-n))ok=true;seen.add(n);}console.log(ok?'YES':'NO');return __LOGS__[0]==='YES';})()"
+                    }
+                ]
+            },
+            "python": {
+                "starter": "n=int(input())\narr=list(map(int,input().split()))\nt=int(input())\nseen=set()\nok=False\nfor num in arr:\n    if t-num in seen:\n        ok=True\n    seen.add(num)\nprint('YES' if ok else 'NO')",
+                "tests": [
+                    {
+                        "description": "2+7=9 works",
+                        "stdin": "4\n2 7 11 15\n9\n",
+                        "expected_output": "YES\n"
+                    }
+                ]
+            },
+            "cpp": {
+                "starter": "#include <bits/stdc++.h>\nusing namespace std;\nint main(){int n;cin>>n;vector<int>a(n);for(int i=0;i<n;i++)cin>>a[i];int t;cin>>t;unordered_set<int>s;bool ok=false;for(int x:a){if(s.count(t-x))ok=true;s.insert(x);}cout<<(ok?\"YES\":\"NO\")<<endl;}",
+                "tests": [
+                    {
+                        "description": "2+7=9 works",
+                        "stdin": "4\n2 7 11 15\n9\n",
+                        "expected_output": "YES\n"
+                    }
+                ]
+            },
+            "java": {
+                "starter": "import java.util.*;public class Main{public static void main(String[] args){Scanner sc=new Scanner(System.in);int n=sc.nextInt();int[] a=new int[n];for(int i=0;i<n;i++)a[i]=sc.nextInt();int t=sc.nextInt();Set<Integer> s=new HashSet<>();boolean ok=false;for(int x:a){if(s.contains(t-x))ok=true;s.add(x);}System.out.println(ok?\"YES\":\"NO\");}}",
+                "tests": [
+                    {
+                        "description": "2+7=9 works",
+                        "stdin": "4\n2 7 11 15\n9\n",
+                        "expected_output": "YES\n"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "mini-max-sum",
+        "topic": "Arrays",
+        "title": "Mini-Max Sum",
+        "difficulty": "medium",
+        "tags": [
+            "nvidia-set"
+        ],
+        "concept": "Given 5 integers, print the min and max sum of 4 of them.",
+        "example": "Input:\n1 2 3 4 5\n\nOutput:\n10 14",
+        "prompt": "Compute the minimum and maximum sum of 4 of 5 integers.",
+        "languages": {
+            "javascript": {
+                "starter": "const arr=[1,2,3,4,5];const s=arr.sort((a,b)=>a-b);const min=s.slice(0,4).reduce((a,b)=>a+b);const max=s.slice(1).reduce((a,b)=>a+b);console.log(min,max);",
+                "tests": [
+                    {
+                        "description": "1 2 3 4 5",
+                        "run": "(()=>{__RESET__();const arr=[1,2,3,4,5];const s=arr.sort((a,b)=>a-b);const min=s.slice(0,4).reduce((a,b)=>a+b);const max=s.slice(1).reduce((a,b)=>a+b);console.log(min,max);return __LOGS__[0]==='10 14';})()"
+                    }
+                ]
+            },
+            "python": {
+                "starter": "arr=list(map(int,input().split()))\narr.sort()\nprint(sum(arr[:4]),sum(arr[1:]))",
+                "tests": [
+                    {
+                        "description": "1 2 3 4 5",
+                        "stdin": "1 2 3 4 5\n",
+                        "expected_output": "10 14\n"
+                    }
+                ]
+            },
+            "cpp": {
+                "starter": "#include <bits/stdc++.h>\nusing namespace std;int main(){vector<long long>a(5);for(int i=0;i<5;i++)cin>>a[i];sort(a.begin(),a.end());long long minSum=accumulate(a.begin(),a.begin()+4,0LL);long long maxSum=accumulate(a.begin()+1,a.end(),0LL);cout<<minSum<<\" \"<<maxSum<<endl;}",
+                "tests": [
+                    {
+                        "description": "1 2 3 4 5",
+                        "stdin": "1 2 3 4 5\n",
+                        "expected_output": "10 14\n"
+                    }
+                ]
+            },
+            "java": {
+                "starter": "import java.util.*;public class Main{public static void main(String[] args){Scanner sc=new Scanner(System.in);long[]a=new long[5];for(int i=0;i<5;i++)a[i]=sc.nextLong();Arrays.sort(a);long min=0,max=0;for(int i=0;i<4;i++)min+=a[i];for(int i=1;i<5;i++)max+=a[i];System.out.println(min+\" \"+max);}}",
+                "tests": [
+                    {
+                        "description": "1 2 3 4 5",
+                        "stdin": "1 2 3 4 5\n",
+                        "expected_output": "10 14\n"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "time-conversion",
+        "topic": "Strings",
+        "title": "Time Conversion",
+        "difficulty": "medium",
+        "tags": [
+            "nvidia-set"
+        ],
+        "concept": "Convert 12-hour time to 24-hour format.",
+        "example": "Input:\n07:05:45PM\n\nOutput:\n19:05:45",
+        "prompt": "Convert a given 12-hour AM/PM time to 24-hour format.",
+        "languages": {
+            "javascript": {
+                "starter": "const s='07:05:45PM';const t=s.slice(0,8);let [h,m,se]=t.split(':');if(s.includes('PM')&&h!=='12')h=(+h+12).toString();if(s.includes('AM')&&h==='12')h='00';console.log(`${h}:${m}:${se}`);",
+                "tests": [
+                    {
+                        "description": "PM to 24",
+                        "run": "(()=>{__RESET__();const s='07:05:45PM';let [h,m,se]=s.slice(0,8).split(':');if(s.includes('PM')&&h!=='12')h=(+h+12).toString();if(s.includes('AM')&&h==='12')h='00';console.log(`${h}:${m}:${se}`);return __LOGS__[0]==='19:05:45';})()"
+                    }
+                ]
+            },
+            "python": {
+                "starter": "s=input().strip()\nh,m,se=s[:-2].split(':')\nif 'PM' in s and h!='12':h=str(int(h)+12)\nif 'AM' in s and h=='12':h='00'\nprint(f'{h}:{m}:{se}')",
+                "tests": [
+                    {
+                        "description": "PM to 24",
+                        "stdin": "07:05:45PM\n",
+                        "expected_output": "19:05:45\n"
+                    }
+                ]
+            },
+            "cpp": {
+                "starter": "#include <bits/stdc++.h>\nusing namespace std;int main(){string s;cin>>s;string h=s.substr(0,2);if(s[8]=='P'&&h!=\"12\")h=to_string(stoi(h)+12);if(s[8]=='A'&&h==\"12\")h=\"00\";cout<<h<<s.substr(2,6)<<endl;}",
+                "tests": [
+                    {
+                        "description": "PM to 24",
+                        "stdin": "07:05:45PM\n",
+                        "expected_output": "19:05:45\n"
+                    }
+                ]
+            },
+            "java": {
+                "starter": "import java.util.*;public class Main{public static void main(String[] args){Scanner sc=new Scanner(System.in);String s=sc.nextLine();String h=s.substring(0,2);if(s.contains(\"PM\")&&!h.equals(\"12\"))h=String.valueOf(Integer.parseInt(h)+12);if(s.contains(\"AM\")&&h.equals(\"12\"))h=\"00\";System.out.println(h+s.substring(2,8));}}",
+                "tests": [
+                    {
+                        "description": "PM to 24",
+                        "stdin": "07:05:45PM\n",
+                        "expected_output": "19:05:45\n"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "staircase",
+        "topic": "Loops",
+        "title": "Staircase",
+        "difficulty": "easy",
+        "tags": [
+            "nvidia-set"
+        ],
+        "concept": "Print a right-aligned staircase of '#' of height n.",
+        "example": "Input:\n4\n\nOutput:\n   #\n  ##\n ###\n####",
+        "prompt": "Read n and print a right-aligned staircase of '#' of height n.",
+        "languages": {
+            "javascript": {
+                "starter": "const n=4;for(let i=1;i<=n;i++){console.log(' '.repeat(n-i)+'#'.repeat(i));}",
+                "tests": [
+                    {
+                        "description": "n=4 staircase",
+                        "run": "(()=>{__RESET__();const n=4;let out='';for(let i=1;i<=n;i++){out+=' '.repeat(n-i)+'#'.repeat(i)+'\\n';}console.log(out.trim());return __LOGS__[0].split('\\n').length===4;})()"
+                    }
+                ]
+            },
+            "python": {
+                "starter": "n=int(input())\nfor i in range(1,n+1):\n    print(' '*(n-i)+'#'*i)",
+                "tests": [
+                    {
+                        "description": "n=4 staircase",
+                        "stdin": "4\n",
+                        "expected_output": "   #\n  ##\n ###\n####\n"
+                    }
+                ]
+            },
+            "cpp": {
+                "starter": "#include <bits/stdc++.h>\nusing namespace std;int main(){int n;cin>>n;for(int i=1;i<=n;i++){cout<<string(n-i,' ')<<string(i,'#')<<\"\\n\";}}",
+                "tests": [
+                    {
+                        "description": "n=4 staircase",
+                        "stdin": "4\n",
+                        "expected_output": "   #\n  ##\n ###\n####\n"
+                    }
+                ]
+            },
+            "java": {
+                "starter": "import java.util.*;public class Main{public static void main(String[] args){Scanner sc=new Scanner(System.in);int n=sc.nextInt();for(int i=1;i<=n;i++){for(int j=0;j<n-i;j++)System.out.print(' ');for(int j=0;j<i;j++)System.out.print('#');System.out.println();}}}",
+                "tests": [
+                    {
+                        "description": "n=4 staircase",
+                        "stdin": "4\n",
+                        "expected_output": "   #\n  ##\n ###\n####\n"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "longest-substring-unique",
+        "topic": "Strings",
+        "title": "Longest Substring Without Repeating Characters",
+        "difficulty": "advanced",
+        "tags": [
+            "bonus"
+        ],
+        "concept": "Find the length of the longest substring without repeating characters.",
+        "example": "Input:\nabcabcbb\n\nOutput:\n3",
+        "prompt": "Return the length of the longest substring without repeating characters.",
+        "languages": {
+            "javascript": {
+                "starter": "const s='abcabcbb';let l=0,r=0,maxLen=0;const seen=new Set();while(r<s.length){if(!seen.has(s[r])){seen.add(s[r++]);maxLen=Math.max(maxLen,seen.size);}else{seen.delete(s[l++]);}}console.log(maxLen);",
+                "tests": [
+                    {
+                        "description": "abcabcbb -> 3",
+                        "run": "(()=>{__RESET__();const s='abcabcbb';let l=0,r=0,maxLen=0;const seen=new Set();while(r<s.length){if(!seen.has(s[r])){seen.add(s[r++]);maxLen=Math.max(maxLen,seen.size);}else{seen.delete(s[l++]);}}console.log(maxLen);return __LOGS__[0]==='3';})()"
+                    }
+                ]
+            },
+            "python": {
+                "starter": "s=input().strip()\nseen=set()\nl=0\nmaxlen=0\nfor r,ch in enumerate(s):\n    while ch in seen:\n        seen.remove(s[l]);l+=1\n    seen.add(ch)\n    maxlen=max(maxlen,r-l+1)\nprint(maxlen)",
+                "tests": [
+                    {
+                        "description": "abcabcbb -> 3",
+                        "stdin": "abcabcbb\n",
+                        "expected_output": "3\n"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "max-subarray-sum",
+        "topic": "Arrays",
+        "title": "Maximum Subarray Sum",
+        "difficulty": "advanced",
+        "tags": [
+            "bonus"
+        ],
+        "concept": "Use Kadane's algorithm to find the maximum sum of any contiguous subarray.",
+        "example": "Input:\n-2 1 -3 4 -1 2 1 -5 4\n\nOutput:\n6",
+        "prompt": "Return the maximum subarray sum using Kadane's Algorithm.",
+        "languages": {
+            "javascript": {
+                "starter": "const arr=[-2,1,-3,4,-1,2,1,-5,4];let maxSoFar=arr[0],cur=0;for(const x of arr){cur=Math.max(x,cur+x);maxSoFar=Math.max(maxSoFar,cur);}console.log(maxSoFar);",
+                "tests": [
+                    {
+                        "description": "classic kadane",
+                        "run": "(()=>{__RESET__();const arr=[-2,1,-3,4,-1,2,1,-5,4];let maxSoFar=arr[0],cur=0;for(const x of arr){cur=Math.max(x,cur+x);maxSoFar=Math.max(maxSoFar,cur);}console.log(maxSoFar);return __LOGS__[0]==='6';})()"
+                    }
+                ]
+            },
+            "python": {
+                "starter": "arr=list(map(int,input().split()))\nmax_so_far=arr[0]\ncurr=0\nfor x in arr:\n    curr=max(x,curr+x)\n    max_so_far=max(max_so_far,curr)\nprint(max_so_far)",
+                "tests": [
+                    {
+                        "description": "classic kadane",
+                        "stdin": "-2 1 -3 4 -1 2 1 -5 4\n",
+                        "expected_output": "6\n"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "fizzbuzz",
+        "topic": "Loops",
+        "title": "FizzBuzz",
+        "difficulty": "easy",
+        "tags": [
+            "warmup"
+        ],
+        "concept": "Classic programming exercise — print Fizz for multiples of 3, Buzz for 5, and FizzBuzz for both.",
+        "example": "Input:\n5\n\nOutput:\n1\n2\nFizz\n4\nBuzz",
+        "prompt": "Read n and print 1..n with FizzBuzz rules.",
+        "languages": {
+            "javascript": {
+                "starter": "const n=5;for(let i=1;i<=n;i++){if(i%15===0)console.log('FizzBuzz');else if(i%3===0)console.log('Fizz');else if(i%5===0)console.log('Buzz');else console.log(i);}",
+                "tests": [
+                    {
+                        "description": "FizzBuzz 5",
+                        "run": "(()=>{__RESET__();const n=5;let out=[];for(let i=1;i<=n;i++){if(i%15===0)out.push('FizzBuzz');else if(i%3===0)out.push('Fizz');else if(i%5===0)out.push('Buzz');else out.push(i);}console.log(out.join('\\n'));return __LOGS__[0].includes('Fizz')})()"
+                    }
+                ]
+            },
+            "python": {
+                "starter": "n=int(input())\nfor i in range(1,n+1):\n    if i%15==0: print('FizzBuzz')\n    elif i%3==0: print('Fizz')\n    elif i%5==0: print('Buzz')\n    else: print(i)",
+                "tests": [
+                    {
+                        "description": "FizzBuzz 5",
+                        "stdin": "5\n",
+                        "expected_output": "1\n2\nFizz\n4\nBuzz\n"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "array-sum",
+        "topic": "Arrays",
+        "title": "Array Sum",
+        "difficulty": "easy",
+        "tags": [
+            "warmup"
+        ],
+        "concept": "Sum all elements in an array.",
+        "example": "Input:\n5\n1 2 3 4 5\n\nOutput:\n15",
+        "prompt": "Read n, then n integers, and print their sum.",
+        "languages": {
+            "javascript": {
+                "starter": "const arr=[1,2,3,4,5];const sum=arr.reduce((a,b)=>a+b,0);console.log(sum);",
+                "tests": [
+                    {
+                        "description": "sum 1..5=15",
+                        "run": "(()=>{__RESET__();const arr=[1,2,3,4,5];console.log(arr.reduce((a,b)=>a+b,0));return __LOGS__[0]==='15';})()"
+                    }
+                ]
+            },
+            "python": {
+                "starter": "n=int(input())\narr=list(map(int,input().split()))\nprint(sum(arr))",
+                "tests": [
+                    {
+                        "description": "sum 1..5=15",
+                        "stdin": "5\n1 2 3 4 5\n",
+                        "expected_output": "15\n"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "linear-search",
+        "topic": "Search",
+        "title": "Linear Search",
+        "difficulty": "easy",
+        "tags": [
+            "warmup"
+        ],
+        "concept": "Search for an element in an array using linear scan.",
+        "example": "Input:\n5\n1 2 3 4 5\n3\n\nOutput:\nFOUND",
+        "prompt": "Read n and n integers, then target x. Print FOUND if present, else NOT FOUND.",
+        "languages": {
+            "javascript": {
+                "starter": "const arr=[1,2,3,4,5];const x=3;console.log(arr.includes(x)?'FOUND':'NOT FOUND');",
+                "tests": [
+                    {
+                        "description": "found",
+                        "run": "(()=>{__RESET__();const arr=[1,2,3,4,5];const x=3;console.log(arr.includes(x)?'FOUND':'NOT FOUND');return __LOGS__[0]==='FOUND';})()"
+                    }
+                ]
+            },
+            "python": {
+                "starter": "n=int(input())\narr=list(map(int,input().split()))\nx=int(input())\nprint('FOUND' if x in arr else 'NOT FOUND')",
+                "tests": [
+                    {
+                        "description": "found",
+                        "stdin": "5\n1 2 3 4 5\n3\n",
+                        "expected_output": "FOUND\n"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "binary-search",
+        "topic": "Search",
+        "title": "Binary Search",
+        "difficulty": "medium",
+        "tags": [
+            "intermediate"
+        ],
+        "concept": "Efficiently search for an element in a sorted array.",
+        "example": "Input:\n5\n1 2 3 4 5\n4\n\nOutput:\nFOUND",
+        "prompt": "Implement binary search.",
+        "languages": {
+            "javascript": {
+                "starter": "const arr=[1,2,3,4,5];const x=4;let l=0,r=arr.length-1,f=false;while(l<=r){let m=Math.floor((l+r)/2);if(arr[m]===x){f=true;break;}if(arr[m]<x)l=m+1;else r=m-1;}console.log(f?'FOUND':'NOT FOUND');",
+                "tests": [
+                    {
+                        "description": "4 found",
+                        "run": "(()=>{__RESET__();const arr=[1,2,3,4,5];const x=4;let l=0,r=arr.length-1,f=false;while(l<=r){let m=Math.floor((l+r)/2);if(arr[m]===x){f=true;break;}if(arr[m]<x)l=m+1;else r=m-1;}console.log(f?'FOUND':'NOT FOUND');return __LOGS__[0]==='FOUND';})()"
+                    }
+                ]
+            },
+            "python": {
+                "starter": "n=int(input())\narr=list(map(int,input().split()))\nx=int(input())\nl,r=0,n-1\nfound=False\nwhile l<=r:\n    m=(l+r)//2\n    if arr[m]==x:\n        found=True\n        break\n    elif arr[m]<x:\n        l=m+1\n    else:\n        r=m-1\nprint('FOUND' if found else 'NOT FOUND')",
+                "tests": [
+                    {
+                        "description": "4 found",
+                        "stdin": "5\n1 2 3 4 5\n4\n",
+                        "expected_output": "FOUND\n"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "anagram-check",
+        "topic": "Strings",
+        "title": "Anagram Check",
+        "difficulty": "medium",
+        "tags": [
+            "intermediate"
+        ],
+        "concept": "Check if two strings are anagrams of each other.",
+        "example": "Input:\nlisten\nsilent\n\nOutput:\nYES",
+        "prompt": "Print YES if the two strings are anagrams, else NO.",
+        "languages": {
+            "javascript": {
+                "starter": "const a='listen',b='silent';const s1=a.split('').sort().join(''),s2=b.split('').sort().join('');console.log(s1===s2?'YES':'NO');",
+                "tests": [
+                    {
+                        "description": "listen silent YES",
+                        "run": "(()=>{__RESET__();const a='listen',b='silent';const s1=a.split('').sort().join(''),s2=b.split('').sort().join('');console.log(s1===s2?'YES':'NO');return __LOGS__[0]==='YES';})()"
+                    }
+                ]
+            },
+            "python": {
+                "starter": "a=input().strip()\nb=input().strip()\nprint('YES' if sorted(a)==sorted(b) else 'NO')",
+                "tests": [
+                    {
+                        "description": "listen silent YES",
+                        "stdin": "listen\nsilent\n",
+                        "expected_output": "YES\n"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "balanced-brackets",
+        "topic": "Stack",
+        "title": "Balanced Brackets",
+        "difficulty": "medium",
+        "tags": [
+            "intermediate"
+        ],
+        "concept": "Check whether brackets are balanced.",
+        "example": "Input:\n{[()]}\n\nOutput:\nYES",
+        "prompt": "Print YES if brackets are balanced, else NO.",
+        "languages": {
+            "javascript": {
+                "starter": "const s='{[()]}';const stack=[];const map={')':'(',']':'[','}':'{'};let ok=true;for(const c of s){if(['(','[','{'].includes(c))stack.push(c);else if(map[c]!==stack.pop()){ok=false;break;}}console.log(stack.length===0&&ok?'YES':'NO');",
+                "tests": [
+                    {
+                        "description": "balanced",
+                        "run": "(()=>{__RESET__();const s='{[()]}';const stack=[];const map={')':'(',']':'[','}':'{'};let ok=true;for(const c of s){if(['(','[','{'].includes(c))stack.push(c);else if(map[c]!==stack.pop()){ok=false;break;}}console.log(stack.length===0&&ok?'YES':'NO');return __LOGS__[0]==='YES';})()"
+                    }
+                ]
+            },
+            "python": {
+                "starter": "s=input().strip()\nstack=[]\npairs={')':'(',']':'[','}':'{'}\nok=True\nfor c in s:\n    if c in '([{':\n        stack.append(c)\n    elif not stack or pairs[c]!=stack.pop():\n        ok=False\n        break\nprint('YES' if ok and not stack else 'NO')",
+                "tests": [
+                    {
+                        "description": "balanced",
+                        "stdin": "{[()]}\n",
+                        "expected_output": "YES\n"
+                    }
+                ]
+            }
+        }
+    }
+]

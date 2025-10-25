@@ -1,0 +1,53 @@
+{
+  "id": "fibonacci",
+  "topic": "Loops",
+  "title": "Fibonacci Sequence",
+  "difficulty": "easy",
+  "tags": [
+    "warmup"
+  ],
+  "concept": "Generate the Fibonacci sequence up to n terms.",
+  "example": "Input:\n5\n\nOutput:\n0 1 1 2 3",
+  "prompt": "Read n and print the first n Fibonacci numbers (space separated).",
+  "languages": {
+    "javascript": {
+      "starter": "const n=5;let a=0,b=1,res=[];for(let i=0;i<n;i++){res.push(a);[a,b]=[b,a+b];}console.log(res.join(' '));",
+      "tests": [
+        {
+          "description": "fib 5",
+          "run": "(()=>{__RESET__();const n=5;let a=0,b=1,res=[];for(let i=0;i<n;i++){res.push(a);[a,b]=[b,a+b];}console.log(res.join(' '));return __LOGS__[0]==='0 1 1 2 3';})()"
+        }
+      ]
+    },
+    "python": {
+      "starter": "n=int(input())\na,b=0,1\nres=[]\nfor i in range(n):\n    res.append(str(a))\n    a,b=b,a+b\nprint(' '.join(res))",
+      "tests": [
+        {
+          "description": "fib 5",
+          "stdin": "5\n",
+          "expected_output": "0 1 1 2 3\n"
+        }
+      ]
+    },
+    "cpp": {
+      "starter": "#include <bits/stdc++.h>\nusing namespace std;\nint main(){int n;cin>>n;long long a=0,b=1;for(int i=0;i<n;i++){cout<<a<<(i==n-1?\"\\n\":\" \");long long t=a;a=b;b+=t;}}",
+      "tests": [
+        {
+          "description": "fib 5",
+          "stdin": "5\n",
+          "expected_output": "0 1 1 2 3\n"
+        }
+      ]
+    },
+    "java": {
+      "starter": "import java.util.*;public class Main{public static void main(String[] args){Scanner sc=new Scanner(System.in);int n=sc.nextInt();long a=0,b=1;for(int i=0;i<n;i++){System.out.print(a+(i==n-1?\"\\n\":\" \"));long t=a;a=b;b+=t;}}}",
+      "tests": [
+        {
+          "description": "fib 5",
+          "stdin": "5\n",
+          "expected_output": "0 1 1 2 3\n"
+        }
+      ]
+    }
+  }
+}

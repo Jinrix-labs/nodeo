@@ -1,0 +1,53 @@
+{
+  "id": "staircase",
+  "topic": "Loops",
+  "title": "Staircase",
+  "difficulty": "easy",
+  "tags": [
+    "nvidia-set"
+  ],
+  "concept": "Print a right-aligned staircase of '#' of height n.",
+  "example": "Input:\n4\n\nOutput:\n   #\n  ##\n ###\n####",
+  "prompt": "Read n and print a right-aligned staircase of '#' of height n.",
+  "languages": {
+    "javascript": {
+      "starter": "const n=4;for(let i=1;i<=n;i++){console.log(' '.repeat(n-i)+'#'.repeat(i));}",
+      "tests": [
+        {
+          "description": "n=4 staircase",
+          "run": "(()=>{__RESET__();const n=4;let out='';for(let i=1;i<=n;i++){out+=' '.repeat(n-i)+'#'.repeat(i)+'\\n';}console.log(out.trim());return __LOGS__[0].split('\\n').length===4;})()"
+        }
+      ]
+    },
+    "python": {
+      "starter": "n=int(input())\nfor i in range(1,n+1):\n    print(' '*(n-i)+'#'*i)",
+      "tests": [
+        {
+          "description": "n=4 staircase",
+          "stdin": "4\n",
+          "expected_output": "   #\n  ##\n ###\n####\n"
+        }
+      ]
+    },
+    "cpp": {
+      "starter": "#include <bits/stdc++.h>\nusing namespace std;int main(){int n;cin>>n;for(int i=1;i<=n;i++){cout<<string(n-i,' ')<<string(i,'#')<<\"\\n\";}}",
+      "tests": [
+        {
+          "description": "n=4 staircase",
+          "stdin": "4\n",
+          "expected_output": "   #\n  ##\n ###\n####\n"
+        }
+      ]
+    },
+    "java": {
+      "starter": "import java.util.*;public class Main{public static void main(String[] args){Scanner sc=new Scanner(System.in);int n=sc.nextInt();for(int i=1;i<=n;i++){for(int j=0;j<n-i;j++)System.out.print(' ');for(int j=0;j<i;j++)System.out.print('#');System.out.println();}}}",
+      "tests": [
+        {
+          "description": "n=4 staircase",
+          "stdin": "4\n",
+          "expected_output": "   #\n  ##\n ###\n####\n"
+        }
+      ]
+    }
+  }
+}

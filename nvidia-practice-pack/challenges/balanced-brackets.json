@@ -1,0 +1,33 @@
+{
+  "id": "balanced-brackets",
+  "topic": "Stack",
+  "title": "Balanced Brackets",
+  "difficulty": "medium",
+  "tags": [
+    "intermediate"
+  ],
+  "concept": "Check whether brackets are balanced.",
+  "example": "Input:\n{[()]}\n\nOutput:\nYES",
+  "prompt": "Print YES if brackets are balanced, else NO.",
+  "languages": {
+    "javascript": {
+      "starter": "const s='{[()]}';const stack=[];const map={')':'(',']':'[','}':'{'};let ok=true;for(const c of s){if(['(','[','{'].includes(c))stack.push(c);else if(map[c]!==stack.pop()){ok=false;break;}}console.log(stack.length===0&&ok?'YES':'NO');",
+      "tests": [
+        {
+          "description": "balanced",
+          "run": "(()=>{__RESET__();const s='{[()]}';const stack=[];const map={')':'(',']':'[','}':'{'};let ok=true;for(const c of s){if(['(','[','{'].includes(c))stack.push(c);else if(map[c]!==stack.pop()){ok=false;break;}}console.log(stack.length===0&&ok?'YES':'NO');return __LOGS__[0]==='YES';})()"
+        }
+      ]
+    },
+    "python": {
+      "starter": "s=input().strip()\nstack=[]\npairs={')':'(',']':'[','}':'{'}\nok=True\nfor c in s:\n    if c in '([{':\n        stack.append(c)\n    elif not stack or pairs[c]!=stack.pop():\n        ok=False\n        break\nprint('YES' if ok and not stack else 'NO')",
+      "tests": [
+        {
+          "description": "balanced",
+          "stdin": "{[()]}\n",
+          "expected_output": "YES\n"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "max-of-three",
+  "topic": "Conditionals",
+  "title": "Max of Three",
+  "difficulty": "easy",
+  "tags": [
+    "warmup"
+  ],
+  "concept": "Find the maximum of three numbers.",
+  "example": "Input:\n3 5 2\n\nOutput:\n5",
+  "prompt": "Read three integers and print the largest.",
+  "languages": {
+    "javascript": {
+      "starter": "const a = 3, b = 5, c = 2;\nconsole.log(Math.max(a,b,c));",
+      "tests": [
+        {
+          "description": "max(3,5,2)=5",
+          "run": "(()=>{__RESET__();const a=3,b=5,c=2;console.log(Math.max(a,b,c));return __LOGS__[0]==='5';})()"
+        }
+      ]
+    },
+    "python": {
+      "starter": "a,b,c=map(int,input().split())\nprint(max(a,b,c))",
+      "tests": [
+        {
+          "description": "max(3,5,2)=5",
+          "stdin": "3 5 2\n",
+          "expected_output": "5\n"
+        }
+      ]
+    },
+    "cpp": {
+      "starter": "#include <bits/stdc++.h>\nusing namespace std;\nint main(){int a,b,c;cin>>a>>b>>c;cout<<max({a,b,c})<<endl;}",
+      "tests": [
+        {
+          "description": "max(3,5,2)=5",
+          "stdin": "3 5 2\n",
+          "expected_output": "5\n"
+        }
+      ]
+    },
+    "java": {
+      "starter": "import java.util.*;public class Main{public static void main(String[] args){Scanner sc=new Scanner(System.in);int a=sc.nextInt(),b=sc.nextInt(),c=sc.nextInt();System.out.println(Math.max(a,Math.max(b,c)));}}",
+      "tests": [
+        {
+          "description": "max(3,5,2)=5",
+          "stdin": "3 5 2\n",
+          "expected_output": "5\n"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "id": "add-two-numbers",
+  "topic": "Math",
+  "title": "Add Two Numbers",
+  "difficulty": "easy",
+  "tags": [
+    "warmup"
+  ],
+  "concept": "Read two numbers and print their sum.",
+  "example": "Input:\n2 3\n\nOutput:\n5",
+  "prompt": "Read two integers and output their sum.",
+  "languages": {
+    "javascript": {
+      "starter": "const a = 2;\nconst b = 3;\nconsole.log(a + b);",
+      "tests": [
+        {
+          "description": "2+3=5",
+          "run": "(()=>{__RESET__(); const a=2,b=3; console.log(a+b); return __LOGS__[0]==='5';})()"
+        },
+        {
+          "description": "0+0=0",
+          "run": "(()=>{__RESET__(); const a=0,b=0; console.log(a+b); return __LOGS__[0]==='0';})()"
+        }
+      ]
+    },
+    "python": {
+      "starter": "a,b = map(int,input().split())\nprint(a+b)",
+      "tests": [
+        {
+          "description": "2+3=5",
+          "stdin": "2 3\n",
+          "expected_output": "5\n"
+        },
+        {
+          "description": "0+0=0",
+          "stdin": "0 0\n",
+          "expected_output": "0\n"
+        }
+      ]
+    },
+    "cpp": {
+      "starter": "#include <bits/stdc++.h>\nusing namespace std;\nint main(){int a,b;cin>>a>>b;cout<<a+b<<endl;return 0;}",
+      "tests": [
+        {
+          "description": "2+3=5",
+          "stdin": "2 3\n",
+          "expected_output": "5\n"
+        },
+        {
+          "description": "0+0=0",
+          "stdin": "0 0\n",
+          "expected_output": "0\n"
+        }
+      ]
+    },
+    "java": {
+      "starter": "import java.util.*;public class Main{public static void main(String[] args){Scanner sc=new Scanner(System.in);int a=sc.nextInt();int b=sc.nextInt();System.out.println(a+b);}}",
+      "tests": [
+        {
+          "description": "2+3=5",
+          "stdin": "2 3\n",
+          "expected_output": "5\n"
+        },
+        {
+          "description": "0+0=0",
+          "stdin": "0 0\n",
+          "expected_output": "0\n"
+        }
+      ]
+    }
+  }
+}

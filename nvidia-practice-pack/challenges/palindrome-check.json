@@ -1,0 +1,72 @@
+{
+  "id": "palindrome-check",
+  "topic": "Strings",
+  "title": "Palindrome Check",
+  "difficulty": "easy",
+  "tags": [
+    "warmup"
+  ],
+  "concept": "Check if a string reads the same forward and backward.",
+  "example": "Input:\nracecar\n\nOutput:\nYES",
+  "prompt": "Print YES if the string is a palindrome, else NO.",
+  "languages": {
+    "javascript": {
+      "starter": "const s='racecar';\nconsole.log(s===s.split('').reverse().join('')?'YES':'NO');",
+      "tests": [
+        {
+          "description": "palindrome racecar",
+          "run": "(()=>{__RESET__();const s='racecar';console.log(s===s.split('').reverse().join('')?'YES':'NO');return __LOGS__[0]==='YES';})()"
+        },
+        {
+          "description": "not palindrome",
+          "run": "(()=>{__RESET__();const s='hello';console.log(s===s.split('').reverse().join('')?'YES':'NO');return __LOGS__[0]==='NO';})()"
+        }
+      ]
+    },
+    "python": {
+      "starter": "s=input().strip()\nprint('YES' if s==s[::-1] else 'NO')",
+      "tests": [
+        {
+          "description": "palindrome racecar",
+          "stdin": "racecar\n",
+          "expected_output": "YES\n"
+        },
+        {
+          "description": "not palindrome",
+          "stdin": "hello\n",
+          "expected_output": "NO\n"
+        }
+      ]
+    },
+    "cpp": {
+      "starter": "#include <bits/stdc++.h>\nusing namespace std;\nint main(){string s;cin>>s;string r=s;reverse(r.begin(),r.end());cout<<(s==r?\"YES\":\"NO\")<<endl;}",
+      "tests": [
+        {
+          "description": "palindrome racecar",
+          "stdin": "racecar\n",
+          "expected_output": "YES\n"
+        },
+        {
+          "description": "not palindrome",
+          "stdin": "hello\n",
+          "expected_output": "NO\n"
+        }
+      ]
+    },
+    "java": {
+      "starter": "import java.util.*;public class Main{public static void main(String[] args){Scanner sc=new Scanner(System.in);String s=sc.nextLine();String r=new StringBuilder(s).reverse().toString();System.out.println(s.equals(r)?\"YES\":\"NO\");}}",
+      "tests": [
+        {
+          "description": "palindrome racecar",
+          "stdin": "racecar\n",
+          "expected_output": "YES\n"
+        },
+        {
+          "description": "not palindrome",
+          "stdin": "hello\n",
+          "expected_output": "NO\n"
+        }
+      ]
+    }
+  }
+}

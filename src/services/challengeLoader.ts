@@ -10,7 +10,7 @@ export interface Challenge {
     id: string;
     topic: string;
     title: string;
-    difficulty?: "easy" | "medium" | "hard";
+    difficulty?: "easy" | "medium" | "hard" | "advanced";
     tags?: string[];
     unlocked?: boolean;
     languages?: {
@@ -44,6 +44,26 @@ export function loadChallenges(): Challenge[] {
     // 3. Use a CDN or API to load challenges
     console.log('🎯 Loading challenges from fallback data');
     return getFallbackChallenges();
+}
+
+/**
+ * Load challenges with optional nvidia pack
+ */
+export async function loadChallengesWithPacks(includeNvidia = false): Promise<Challenge[]> {
+    const baseChallenges = loadChallenges();
+
+    if (includeNvidia) {
+        try {
+            const { loadNvidiaPack } = await import('./nvidiaPackLoader');
+            const nvidiaChallenges = await loadNvidiaPack();
+            return [...baseChallenges, ...nvidiaChallenges];
+        } catch (error) {
+            console.warn('Failed to load NVIDIA pack:', error);
+            return baseChallenges;
+        }
+    }
+
+    return baseChallenges;
 }
 
 /**

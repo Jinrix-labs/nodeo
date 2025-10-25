@@ -1,0 +1,72 @@
+{
+  "id": "find-number",
+  "topic": "Search",
+  "title": "Find Number",
+  "difficulty": "easy",
+  "tags": [
+    "nvidia-set"
+  ],
+  "concept": "Check whether a given number exists in an array.",
+  "example": "Input:\n5\n1 2 3 4 5\n4\n\nOutput:\nYES",
+  "prompt": "Read n, then n integers. Read target x. Print YES if x is in the array, else NO.",
+  "languages": {
+    "javascript": {
+      "starter": "const arr = [1,2,3,4,5];\nconst x = 4;\nconsole.log(arr.includes(x)?'YES':'NO');",
+      "tests": [
+        {
+          "description": "4 in array",
+          "run": "(()=>{__RESET__();const arr=[1,2,3,4,5];const x=4;console.log(arr.includes(x)?'YES':'NO');return __LOGS__[0]==='YES';})()"
+        },
+        {
+          "description": "99 not in array",
+          "run": "(()=>{__RESET__();const arr=[1,2,3,4,5];const x=99;console.log(arr.includes(x)?'YES':'NO');return __LOGS__[0]==='NO';})()"
+        }
+      ]
+    },
+    "python": {
+      "starter": "n=int(input())\narr=list(map(int,input().split()))\nx=int(input())\nprint('YES' if x in arr else 'NO')",
+      "tests": [
+        {
+          "description": "4 in array",
+          "stdin": "5\n1 2 3 4 5\n4\n",
+          "expected_output": "YES\n"
+        },
+        {
+          "description": "99 not in array",
+          "stdin": "5\n1 2 3 4 5\n99\n",
+          "expected_output": "NO\n"
+        }
+      ]
+    },
+    "cpp": {
+      "starter": "#include <bits/stdc++.h>\nusing namespace std;\nint main(){int n;cin>>n;vector<int>a(n);for(int i=0;i<n;i++)cin>>a[i];int x;cin>>x;cout<<(find(a.begin(),a.end(),x)!=a.end()?\"YES\":\"NO\")<<endl;}",
+      "tests": [
+        {
+          "description": "4 in array",
+          "stdin": "5\n1 2 3 4 5\n4\n",
+          "expected_output": "YES\n"
+        },
+        {
+          "description": "99 not in array",
+          "stdin": "5\n1 2 3 4 5\n99\n",
+          "expected_output": "NO\n"
+        }
+      ]
+    },
+    "java": {
+      "starter": "import java.util.*;public class Main{public static void main(String[] args){Scanner sc=new Scanner(System.in);int n=sc.nextInt();int[]a=new int[n];for(int i=0;i<n;i++)a[i]=sc.nextInt();int x=sc.nextInt();boolean f=false;for(int v:a)if(v==x)f=true;System.out.println(f?\"YES\":\"NO\");}}",
+      "tests": [
+        {
+          "description": "4 in array",
+          "stdin": "5\n1 2 3 4 5\n4\n",
+          "expected_output": "YES\n"
+        },
+        {
+          "description": "99 not in array",
+          "stdin": "5\n1 2 3 4 5\n99\n",
+          "expected_output": "NO\n"
+        }
+      ]
+    }
+  }
+}

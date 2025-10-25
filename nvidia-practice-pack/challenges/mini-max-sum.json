@@ -1,0 +1,53 @@
+{
+  "id": "mini-max-sum",
+  "topic": "Arrays",
+  "title": "Mini-Max Sum",
+  "difficulty": "medium",
+  "tags": [
+    "nvidia-set"
+  ],
+  "concept": "Given 5 integers, print the min and max sum of 4 of them.",
+  "example": "Input:\n1 2 3 4 5\n\nOutput:\n10 14",
+  "prompt": "Compute the minimum and maximum sum of 4 of 5 integers.",
+  "languages": {
+    "javascript": {
+      "starter": "const arr=[1,2,3,4,5];const s=arr.sort((a,b)=>a-b);const min=s.slice(0,4).reduce((a,b)=>a+b);const max=s.slice(1).reduce((a,b)=>a+b);console.log(min,max);",
+      "tests": [
+        {
+          "description": "1 2 3 4 5",
+          "run": "(()=>{__RESET__();const arr=[1,2,3,4,5];const s=arr.sort((a,b)=>a-b);const min=s.slice(0,4).reduce((a,b)=>a+b);const max=s.slice(1).reduce((a,b)=>a+b);console.log(min,max);return __LOGS__[0]==='10 14';})()"
+        }
+      ]
+    },
+    "python": {
+      "starter": "arr=list(map(int,input().split()))\narr.sort()\nprint(sum(arr[:4]),sum(arr[1:]))",
+      "tests": [
+        {
+          "description": "1 2 3 4 5",
+          "stdin": "1 2 3 4 5\n",
+          "expected_output": "10 14\n"
+        }
+      ]
+    },
+    "cpp": {
+      "starter": "#include <bits/stdc++.h>\nusing namespace std;int main(){vector<long long>a(5);for(int i=0;i<5;i++)cin>>a[i];sort(a.begin(),a.end());long long minSum=accumulate(a.begin(),a.begin()+4,0LL);long long maxSum=accumulate(a.begin()+1,a.end(),0LL);cout<<minSum<<\" \"<<maxSum<<endl;}",
+      "tests": [
+        {
+          "description": "1 2 3 4 5",
+          "stdin": "1 2 3 4 5\n",
+          "expected_output": "10 14\n"
+        }
+      ]
+    },
+    "java": {
+      "starter": "import java.util.*;public class Main{public static void main(String[] args){Scanner sc=new Scanner(System.in);long[]a=new long[5];for(int i=0;i<5;i++)a[i]=sc.nextLong();Arrays.sort(a);long min=0,max=0;for(int i=0;i<4;i++)min+=a[i];for(int i=1;i<5;i++)max+=a[i];System.out.println(min+\" \"+max);}}",
+      "tests": [
+        {
+          "description": "1 2 3 4 5",
+          "stdin": "1 2 3 4 5\n",
+          "expected_output": "10 14\n"
+        }
+      ]
+    }
+  }
+}

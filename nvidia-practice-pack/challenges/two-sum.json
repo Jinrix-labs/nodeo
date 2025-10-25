@@ -1,0 +1,53 @@
+{
+  "id": "two-sum",
+  "topic": "Arrays",
+  "title": "Two Sum",
+  "difficulty": "medium",
+  "tags": [
+    "nvidia-set"
+  ],
+  "concept": "Find if any two numbers sum to a target.",
+  "example": "Input:\n4\n2 7 11 15\n9\n\nOutput:\nYES",
+  "prompt": "Return YES if any pair sums to the target, else NO.",
+  "languages": {
+    "javascript": {
+      "starter": "const arr=[2,7,11,15];const t=9;let seen=new Set();let ok=false;for(const n of arr){if(seen.has(t-n))ok=true;seen.add(n);}console.log(ok?'YES':'NO');",
+      "tests": [
+        {
+          "description": "2+7=9 works",
+          "run": "(()=>{__RESET__();const arr=[2,7,11,15];const t=9;let seen=new Set(),ok=false;for(const n of arr){if(seen.has(t-n))ok=true;seen.add(n);}console.log(ok?'YES':'NO');return __LOGS__[0]==='YES';})()"
+        }
+      ]
+    },
+    "python": {
+      "starter": "n=int(input())\narr=list(map(int,input().split()))\nt=int(input())\nseen=set()\nok=False\nfor num in arr:\n    if t-num in seen:\n        ok=True\n    seen.add(num)\nprint('YES' if ok else 'NO')",
+      "tests": [
+        {
+          "description": "2+7=9 works",
+          "stdin": "4\n2 7 11 15\n9\n",
+          "expected_output": "YES\n"
+        }
+      ]
+    },
+    "cpp": {
+      "starter": "#include <bits/stdc++.h>\nusing namespace std;\nint main(){int n;cin>>n;vector<int>a(n);for(int i=0;i<n;i++)cin>>a[i];int t;cin>>t;unordered_set<int>s;bool ok=false;for(int x:a){if(s.count(t-x))ok=true;s.insert(x);}cout<<(ok?\"YES\":\"NO\")<<endl;}",
+      "tests": [
+        {
+          "description": "2+7=9 works",
+          "stdin": "4\n2 7 11 15\n9\n",
+          "expected_output": "YES\n"
+        }
+      ]
+    },
+    "java": {
+      "starter": "import java.util.*;public class Main{public static void main(String[] args){Scanner sc=new Scanner(System.in);int n=sc.nextInt();int[] a=new int[n];for(int i=0;i<n;i++)a[i]=sc.nextInt();int t=sc.nextInt();Set<Integer> s=new HashSet<>();boolean ok=false;for(int x:a){if(s.contains(t-x))ok=true;s.add(x);}System.out.println(ok?\"YES\":\"NO\");}}",
+      "tests": [
+        {
+          "description": "2+7=9 works",
+          "stdin": "4\n2 7 11 15\n9\n",
+          "expected_output": "YES\n"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "time-conversion",
+  "topic": "Strings",
+  "title": "Time Conversion",
+  "difficulty": "medium",
+  "tags": [
+    "nvidia-set"
+  ],
+  "concept": "Convert 12-hour time to 24-hour format.",
+  "example": "Input:\n07:05:45PM\n\nOutput:\n19:05:45",
+  "prompt": "Convert a given 12-hour AM/PM time to 24-hour format.",
+  "languages": {
+    "javascript": {
+      "starter": "const s='07:05:45PM';const t=s.slice(0,8);let [h,m,se]=t.split(':');if(s.includes('PM')&&h!=='12')h=(+h+12).toString();if(s.includes('AM')&&h==='12')h='00';console.log(`${h}:${m}:${se}`);",
+      "tests": [
+        {
+          "description": "PM to 24",
+          "run": "(()=>{__RESET__();const s='07:05:45PM';let [h,m,se]=s.slice(0,8).split(':');if(s.includes('PM')&&h!=='12')h=(+h+12).toString();if(s.includes('AM')&&h==='12')h='00';console.log(`${h}:${m}:${se}`);return __LOGS__[0]==='19:05:45';})()"
+        }
+      ]
+    },
+    "python": {
+      "starter": "s=input().strip()\nh,m,se=s[:-2].split(':')\nif 'PM' in s and h!='12':h=str(int(h)+12)\nif 'AM' in s and h=='12':h='00'\nprint(f'{h}:{m}:{se}')",
+      "tests": [
+        {
+          "description": "PM to 24",
+          "stdin": "07:05:45PM\n",
+          "expected_output": "19:05:45\n"
+        }
+      ]
+    },
+    "cpp": {
+      "starter": "#include <bits/stdc++.h>\nusing namespace std;int main(){string s;cin>>s;string h=s.substr(0,2);if(s[8]=='P'&&h!=\"12\")h=to_string(stoi(h)+12);if(s[8]=='A'&&h==\"12\")h=\"00\";cout<<h<<s.substr(2,6)<<endl;}",
+      "tests": [
+        {
+          "description": "PM to 24",
+          "stdin": "07:05:45PM\n",
+          "expected_output": "19:05:45\n"
+        }
+      ]
+    },
+    "java": {
+      "starter": "import java.util.*;public class Main{public static void main(String[] args){Scanner sc=new Scanner(System.in);String s=sc.nextLine();String h=s.substring(0,2);if(s.contains(\"PM\")&&!h.equals(\"12\"))h=String.valueOf(Integer.parseInt(h)+12);if(s.contains(\"AM\")&&h.equals(\"12\"))h=\"00\";System.out.println(h+s.substring(2,8));}}",
+      "tests": [
+        {
+          "description": "PM to 24",
+          "stdin": "07:05:45PM\n",
+          "expected_output": "19:05:45\n"
+        }
+      ]
+    }
+  }
+}

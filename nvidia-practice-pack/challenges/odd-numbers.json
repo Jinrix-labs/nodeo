@@ -1,0 +1,53 @@
+{
+  "id": "odd-numbers",
+  "topic": "Loops",
+  "title": "Odd Numbers",
+  "difficulty": "easy",
+  "tags": [
+    "nvidia-set"
+  ],
+  "concept": "Print all odd numbers between a and b inclusive.",
+  "example": "Input:\n2 9\n\nOutput:\n3 5 7 9",
+  "prompt": "Print all odd numbers between a and b inclusive (space separated).",
+  "languages": {
+    "javascript": {
+      "starter": "const a=2,b=9;let res=[];for(let i=a;i<=b;i++)if(i%2!==0)res.push(i);console.log(res.join(' '));",
+      "tests": [
+        {
+          "description": "2 to 9 odds",
+          "run": "(()=>{__RESET__();const a=2,b=9;let r=[];for(let i=a;i<=b;i++)if(i%2!==0)r.push(i);console.log(r.join(' '));return __LOGS__[0]==='3 5 7 9';})()"
+        }
+      ]
+    },
+    "python": {
+      "starter": "a,b=map(int,input().split())\nres=[str(i) for i in range(a,b+1) if i%2!=0]\nprint(' '.join(res))",
+      "tests": [
+        {
+          "description": "2 to 9 odds",
+          "stdin": "2 9\n",
+          "expected_output": "3 5 7 9\n"
+        }
+      ]
+    },
+    "cpp": {
+      "starter": "#include <bits/stdc++.h>\nusing namespace std;\nint main(){int a,b;cin>>a>>b;for(int i=a;i<=b;i++)if(i%2!=0)cout<<i<<(i<b-1?\" \":\"\");cout<<endl;}",
+      "tests": [
+        {
+          "description": "2 to 9 odds",
+          "stdin": "2 9\n",
+          "expected_output": "3 5 7 9\n"
+        }
+      ]
+    },
+    "java": {
+      "starter": "import java.util.*;public class Main{public static void main(String[] args){Scanner sc=new Scanner(System.in);int a=sc.nextInt(),b=sc.nextInt();for(int i=a;i<=b;i++)if(i%2!=0)System.out.print(i+(i<b?\" \":\"\\n\"));}}",
+      "tests": [
+        {
+          "description": "2 to 9 odds",
+          "stdin": "2 9\n",
+          "expected_output": "3 5 7 9\n"
+        }
+      ]
+    }
+  }
+}

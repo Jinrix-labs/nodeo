@@ -1,0 +1,72 @@
+{
+  "id": "even-or-odd",
+  "topic": "Conditionals",
+  "title": "Even or Odd",
+  "difficulty": "easy",
+  "tags": [
+    "warmup"
+  ],
+  "concept": "Check if a number is even or odd.",
+  "example": "Input:\n5\n\nOutput:\nOdd",
+  "prompt": "Read an integer. Print 'Even' if it's even, otherwise 'Odd'.",
+  "languages": {
+    "javascript": {
+      "starter": "const n = 5;\nif (n % 2 === 0) console.log('Even'); else console.log('Odd');",
+      "tests": [
+        {
+          "description": "5 is odd",
+          "run": "(()=>{__RESET__();const n=5;if(n%2===0)console.log('Even');else console.log('Odd');return __LOGS__[0]==='Odd';})()"
+        },
+        {
+          "description": "4 is even",
+          "run": "(()=>{__RESET__();const n=4;if(n%2===0)console.log('Even');else console.log('Odd');return __LOGS__[0]==='Even';})()"
+        }
+      ]
+    },
+    "python": {
+      "starter": "n=int(input())\nprint('Even' if n%2==0 else 'Odd')",
+      "tests": [
+        {
+          "description": "5 is odd",
+          "stdin": "5\n",
+          "expected_output": "Odd\n"
+        },
+        {
+          "description": "4 is even",
+          "stdin": "4\n",
+          "expected_output": "Even\n"
+        }
+      ]
+    },
+    "cpp": {
+      "starter": "#include <bits/stdc++.h>\nusing namespace std;\nint main(){int n;cin>>n;if(n%2==0)cout<<\"Even\"<<endl;else cout<<\"Odd\"<<endl;}",
+      "tests": [
+        {
+          "description": "5 is odd",
+          "stdin": "5\n",
+          "expected_output": "Odd\n"
+        },
+        {
+          "description": "4 is even",
+          "stdin": "4\n",
+          "expected_output": "Even\n"
+        }
+      ]
+    },
+    "java": {
+      "starter": "import java.util.*;public class Main{public static void main(String[] args){Scanner sc=new Scanner(System.in);int n=sc.nextInt();System.out.println(n%2==0?\"Even\":\"Odd\");}}",
+      "tests": [
+        {
+          "description": "5 is odd",
+          "stdin": "5\n",
+          "expected_output": "Odd\n"
+        },
+        {
+          "description": "4 is even",
+          "stdin": "4\n",
+          "expected_output": "Even\n"
+        }
+      ]
+    }
+  }
+}

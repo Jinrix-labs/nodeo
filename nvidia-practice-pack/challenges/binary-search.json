@@ -1,0 +1,33 @@
+{
+  "id": "binary-search",
+  "topic": "Search",
+  "title": "Binary Search",
+  "difficulty": "medium",
+  "tags": [
+    "intermediate"
+  ],
+  "concept": "Efficiently search for an element in a sorted array.",
+  "example": "Input:\n5\n1 2 3 4 5\n4\n\nOutput:\nFOUND",
+  "prompt": "Implement binary search.",
+  "languages": {
+    "javascript": {
+      "starter": "const arr=[1,2,3,4,5];const x=4;let l=0,r=arr.length-1,f=false;while(l<=r){let m=Math.floor((l+r)/2);if(arr[m]===x){f=true;break;}if(arr[m]<x)l=m+1;else r=m-1;}console.log(f?'FOUND':'NOT FOUND');",
+      "tests": [
+        {
+          "description": "4 found",
+          "run": "(()=>{__RESET__();const arr=[1,2,3,4,5];const x=4;let l=0,r=arr.length-1,f=false;while(l<=r){let m=Math.floor((l+r)/2);if(arr[m]===x){f=true;break;}if(arr[m]<x)l=m+1;else r=m-1;}console.log(f?'FOUND':'NOT FOUND');return __LOGS__[0]==='FOUND';})()"
+        }
+      ]
+    },
+    "python": {
+      "starter": "n=int(input())\narr=list(map(int,input().split()))\nx=int(input())\nl,r=0,n-1\nfound=False\nwhile l<=r:\n    m=(l+r)//2\n    if arr[m]==x:\n        found=True\n        break\n    elif arr[m]<x:\n        l=m+1\n    else:\n        r=m-1\nprint('FOUND' if found else 'NOT FOUND')",
+      "tests": [
+        {
+          "description": "4 found",
+          "stdin": "5\n1 2 3 4 5\n4\n",
+          "expected_output": "FOUND\n"
+        }
+      ]
+    }
+  }
+}

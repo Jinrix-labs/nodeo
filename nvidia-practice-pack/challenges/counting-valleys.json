@@ -1,0 +1,53 @@
+{
+  "id": "counting-valleys",
+  "topic": "Loops",
+  "title": "Counting Valleys",
+  "difficulty": "medium",
+  "tags": [
+    "nvidia-set"
+  ],
+  "concept": "Count the number of valleys in a hike represented by U/D steps.",
+  "example": "Input:\n8\nUDDDUDUU\n\nOutput:\n1",
+  "prompt": "Given the steps of a hike, count the number of valleys.",
+  "languages": {
+    "javascript": {
+      "starter": "const steps='UDDDUDUU';let lvl=0,valleys=0;for(const s of steps){if(s==='U')lvl++;else lvl--;if(lvl===0&&s==='U')valleys++;}console.log(valleys);",
+      "tests": [
+        {
+          "description": "1 valley",
+          "run": "(()=>{__RESET__();const steps='UDDDUDUU';let lvl=0,val=0;for(const s of steps){if(s==='U')lvl++;else lvl--;if(lvl===0&&s==='U')val++;}console.log(val);return __LOGS__[0]==='1';})()"
+        }
+      ]
+    },
+    "python": {
+      "starter": "n=int(input())\nsteps=input().strip()\nlevel=0\nvalleys=0\nfor s in steps:\n    if s=='U': level+=1\n    else: level-=1\n    if level==0 and s=='U': valleys+=1\nprint(valleys)",
+      "tests": [
+        {
+          "description": "1 valley",
+          "stdin": "8\nUDDDUDUU\n",
+          "expected_output": "1\n"
+        }
+      ]
+    },
+    "cpp": {
+      "starter": "#include <bits/stdc++.h>\nusing namespace std;\nint main(){int n;cin>>n;string s;cin>>s;int lvl=0,v=0;for(char c:s){if(c=='U')lvl++;else lvl--;if(lvl==0&&c=='U')v++;}cout<<v<<endl;}",
+      "tests": [
+        {
+          "description": "1 valley",
+          "stdin": "8\nUDDDUDUU\n",
+          "expected_output": "1\n"
+        }
+      ]
+    },
+    "java": {
+      "starter": "import java.util.*;public class Main{public static void main(String[] args){Scanner sc=new Scanner(System.in);int n=sc.nextInt();String s=sc.next();int lvl=0,v=0;for(char c:s.toCharArray()){if(c=='U')lvl++;else lvl--;if(lvl==0&&c=='U')v++;}System.out.println(v);}}",
+      "tests": [
+        {
+          "description": "1 valley",
+          "stdin": "8\nUDDDUDUU\n",
+          "expected_output": "1\n"
+        }
+      ]
+    }
+  }
+}

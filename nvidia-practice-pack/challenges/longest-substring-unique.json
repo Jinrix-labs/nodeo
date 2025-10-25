@@ -1,0 +1,33 @@
+{
+  "id": "longest-substring-unique",
+  "topic": "Strings",
+  "title": "Longest Substring Without Repeating Characters",
+  "difficulty": "advanced",
+  "tags": [
+    "bonus"
+  ],
+  "concept": "Find the length of the longest substring without repeating characters.",
+  "example": "Input:\nabcabcbb\n\nOutput:\n3",
+  "prompt": "Return the length of the longest substring without repeating characters.",
+  "languages": {
+    "javascript": {
+      "starter": "const s='abcabcbb';let l=0,r=0,maxLen=0;const seen=new Set();while(r<s.length){if(!seen.has(s[r])){seen.add(s[r++]);maxLen=Math.max(maxLen,seen.size);}else{seen.delete(s[l++]);}}console.log(maxLen);",
+      "tests": [
+        {
+          "description": "abcabcbb -> 3",
+          "run": "(()=>{__RESET__();const s='abcabcbb';let l=0,r=0,maxLen=0;const seen=new Set();while(r<s.length){if(!seen.has(s[r])){seen.add(s[r++]);maxLen=Math.max(maxLen,seen.size);}else{seen.delete(s[l++]);}}console.log(maxLen);return __LOGS__[0]==='3';})()"
+        }
+      ]
+    },
+    "python": {
+      "starter": "s=input().strip()\nseen=set()\nl=0\nmaxlen=0\nfor r,ch in enumerate(s):\n    while ch in seen:\n        seen.remove(s[l]);l+=1\n    seen.add(ch)\n    maxlen=max(maxlen,r-l+1)\nprint(maxlen)",
+      "tests": [
+        {
+          "description": "abcabcbb -> 3",
+          "stdin": "abcabcbb\n",
+          "expected_output": "3\n"
+        }
+      ]
+    }
+  }
+}

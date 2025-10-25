@@ -1,0 +1,33 @@
+{
+  "id": "anagram-check",
+  "topic": "Strings",
+  "title": "Anagram Check",
+  "difficulty": "medium",
+  "tags": [
+    "intermediate"
+  ],
+  "concept": "Check if two strings are anagrams of each other.",
+  "example": "Input:\nlisten\nsilent\n\nOutput:\nYES",
+  "prompt": "Print YES if the two strings are anagrams, else NO.",
+  "languages": {
+    "javascript": {
+      "starter": "const a='listen',b='silent';const s1=a.split('').sort().join(''),s2=b.split('').sort().join('');console.log(s1===s2?'YES':'NO');",
+      "tests": [
+        {
+          "description": "listen silent YES",
+          "run": "(()=>{__RESET__();const a='listen',b='silent';const s1=a.split('').sort().join(''),s2=b.split('').sort().join('');console.log(s1===s2?'YES':'NO');return __LOGS__[0]==='YES';})()"
+        }
+      ]
+    },
+    "python": {
+      "starter": "a=input().strip()\nb=input().strip()\nprint('YES' if sorted(a)==sorted(b) else 'NO')",
+      "tests": [
+        {
+          "description": "listen silent YES",
+          "stdin": "listen\nsilent\n",
+          "expected_output": "YES\n"
+        }
+      ]
+    }
+  }
+}

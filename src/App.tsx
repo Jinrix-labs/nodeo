@@ -1,6 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { runCode } from "./services/codeRunner";
-import { loadChallenges, type Challenge } from "./services/challengeLoader";
+import { loadChallenges, loadChallengesWithPacks, type Challenge } from "./services/challengeLoader";
+import {
+    saveAppState,
+    loadAppState,
+    saveChallengeProgress,
+    loadChallengeProgress,
+    saveNvidiaPackState,
+    loadNvidiaPackState,
+    clearAppState
+} from "./services/persistence";
 
 /**
  * Nodeo – Multi-Language Coding Platform
@@ -309,36 +318,117 @@ function Panel({ title, children }: { title: string; children: React.ReactNode }
 }
 
 export default function NodeoApp() {
-    const [challengeId, setChallengeId] = useState(CHALLENGES[0]?.id || "fallback-hello");
+    // Load initial state from localStorage
+    const savedState = loadAppState();
+    const savedNvidiaState = loadNvidiaPackState();
+
+    const [challengeId, setChallengeId] = useState(savedState.challengeId || CHALLENGES[0]?.id || "fallback-hello");
     const [code, setCode] = useState("");
     const [evalResult, setEvalResult] = useState<EvalResult | null>(null);
     const [hints, setHints] = useState<string[]>([]);
     const [running, setRunning] = useState(false);
-    const [mode, setMode] = useState<"learn" | "code">("learn");
+    const [mode, setMode] = useState<"learn" | "code">(savedState.mode || "learn");
     const [showNextButton, setShowNextButton] = useState(false);
 
     // Track how many times the user has attempted the current challenge
-    const [attemptCount, setAttemptCount] = useState<number>(0);
+    const [attemptCount, setAttemptCount] = useState<number>(savedState.attemptCount || 0);
 
     // Challenge Library state
     const [showLibrary, setShowLibrary] = useState(false);
+    const [showSettings, setShowSettings] = useState(false);
 
     // Language selection state
-    const [language, setLanguage] = useState<"javascript" | "python" | "cpp" | "java">("javascript");
+    const [language, setLanguage] = useState<"javascript" | "python" | "cpp" | "java">(savedState.language || "javascript");
 
-    const challenge = CHALLENGES.find(c => c.id === challengeId) || CHALLENGES[0];
+    // Dynamic challenges state
+    const [challenges, setChallenges] = useState<Challenge[]>(CHALLENGES);
+    const [nvidiaPackLoaded, setNvidiaPackLoaded] = useState(savedNvidiaState);
+    const [loadingNvidiaPack, setLoadingNvidiaPack] = useState(false);
+
+    const challenge = challenges.find(c => c.id === challengeId) || challenges[0];
+
+    // Initialize app state on mount
+    useEffect(() => {
+        // Load nvidia pack if it was previously loaded
+        if (savedNvidiaState && !nvidiaPackLoaded) {
+            loadNvidiaPack();
+        }
+
+        // Load saved code for current challenge
+        const savedProgress = loadChallengeProgress(challengeId);
+        if (savedProgress.code) {
+            setCode(savedProgress.code);
+        }
+        if (savedProgress.attemptCount) {
+            setAttemptCount(savedProgress.attemptCount);
+        }
+    }, []);
+
+    // Save state whenever important values change
+    useEffect(() => {
+        saveAppState({
+            challengeId,
+            language,
+            mode,
+            attemptCount,
+            nvidiaPackLoaded
+        });
+    }, [challengeId, language, mode, attemptCount, nvidiaPackLoaded]);
+
+    // Save nvidia pack state
+    useEffect(() => {
+        saveNvidiaPackState(nvidiaPackLoaded);
+    }, [nvidiaPackLoaded]);
+
+    // Save code changes with debouncing
+    useEffect(() => {
+        const timeoutId = setTimeout(() => {
+            if (code.trim()) {
+                saveChallengeProgress(challengeId, code, attemptCount);
+            }
+        }, 1000); // Save after 1 second of no changes
+
+        return () => clearTimeout(timeoutId);
+    }, [code, challengeId, attemptCount]);
+
+    // Load NVIDIA Practice Pack
+    async function loadNvidiaPack() {
+        if (nvidiaPackLoaded || loadingNvidiaPack) return;
+
+        setLoadingNvidiaPack(true);
+        try {
+            const allChallenges = await loadChallengesWithPacks(true);
+            setChallenges(allChallenges);
+            setNvidiaPackLoaded(true);
+            console.log('🎯 NVIDIA Practice Pack loaded successfully!');
+        } catch (error) {
+            console.error('Failed to load NVIDIA pack:', error);
+        } finally {
+            setLoadingNvidiaPack(false);
+        }
+    }
 
     React.useEffect(() => {
-        // Get starter code for current language, fallback to legacy starter
-        const langConfig = challenge.languages?.[language];
-        const starterCode = langConfig?.starter || challenge.starter;
-        setCode(starterCode);
+        // Check for saved progress first
+        const savedProgress = loadChallengeProgress(challengeId);
+
+        if (savedProgress.code) {
+            // Use saved code if available
+            setCode(savedProgress.code);
+            setAttemptCount(savedProgress.attemptCount || 0);
+        } else {
+            // Get starter code for current language, fallback to legacy starter
+            const langConfig = challenge.languages?.[language];
+            const starterCode = langConfig?.starter || challenge.starter;
+            setCode(starterCode);
+            setAttemptCount(0);
+        }
+
         setEvalResult(null);
         setHints([]);
         setMode("learn");
         setShowNextButton(false);
-        setAttemptCount(0); // Reset attempts when changing challenges
-    }, [challenge, language]);
+    }, [challenge, language, challengeId]);
 
     // Attach meanings to tooltip spans
     React.useEffect(() => {
@@ -393,9 +483,30 @@ export default function NodeoApp() {
     }
 
     function goToNextChallenge() {
-        const currentIndex = CHALLENGES.findIndex(c => c.id === challengeId);
-        if (currentIndex < CHALLENGES.length - 1) {
-            setChallengeId(CHALLENGES[currentIndex + 1].id);
+        const currentIndex = challenges.findIndex(c => c.id === challengeId);
+        if (currentIndex < challenges.length - 1) {
+            setChallengeId(challenges[currentIndex + 1].id);
+        }
+    }
+
+    // Reset all app data
+    function resetAllData() {
+        if (confirm('Are you sure you want to clear all saved data? This will reset your progress, code, and settings.')) {
+            clearAppState();
+            // Clear all challenge progress
+            const savedIds = Object.keys(localStorage).filter(key => key.startsWith('nodeo-challenge-'));
+            savedIds.forEach(key => localStorage.removeItem(key));
+
+            // Reset state to defaults
+            setChallengeId(CHALLENGES[0]?.id || "fallback-hello");
+            setCode("");
+            setAttemptCount(0);
+            setMode("learn");
+            setLanguage("javascript");
+            setNvidiaPackLoaded(false);
+            setChallenges(CHALLENGES);
+
+            console.log('🔄 All app data cleared');
         }
     }
 
@@ -408,11 +519,29 @@ export default function NodeoApp() {
                         <p className="text-slate-400">Multi-Language Coding Platform</p>
                     </div>
                     <div className="flex items-center gap-3">
+                        {!nvidiaPackLoaded && (
+                            <button
+                                onClick={loadNvidiaPack}
+                                disabled={loadingNvidiaPack}
+                                className="rounded-lg border border-blue-600 bg-blue-700 px-3 py-1 text-sm text-blue-100 hover:bg-blue-600 transition-colors disabled:opacity-50"
+                            >
+                                {loadingNvidiaPack ? "Loading..." : "🧠 Load NVIDIA Pack"}
+                            </button>
+                        )}
+                        {nvidiaPackLoaded && (
+                            <span className="text-sm text-green-400">✅ NVIDIA Pack Loaded</span>
+                        )}
                         <button
                             onClick={() => setShowLibrary(!showLibrary)}
                             className="rounded-lg border border-slate-600 bg-slate-700 px-3 py-1 text-sm text-slate-300 hover:bg-slate-600 transition-colors"
                         >
                             {showLibrary ? "Close Library" : "📚 Challenge Library"}
+                        </button>
+                        <button
+                            onClick={() => setShowSettings(!showSettings)}
+                            className="rounded-lg border border-slate-600 bg-slate-700 px-3 py-1 text-sm text-slate-300 hover:bg-slate-600 transition-colors"
+                        >
+                            ⚙️ Settings
                         </button>
                         <nav className="text-sm text-slate-400">learn by doing ✨</nav>
                     </div>
@@ -421,12 +550,45 @@ export default function NodeoApp() {
                 {showLibrary && (
                     <div className="my-4">
                         <ChallengeLibrary
-                            challenges={CHALLENGES}
+                            challenges={challenges}
                             onSelect={(id) => {
                                 setChallengeId(id);
                                 setShowLibrary(false);
                             }}
                         />
+                    </div>
+                )}
+
+                {showSettings && (
+                    <div className="my-4">
+                        <Panel title="Settings">
+                            <div className="space-y-4">
+                                <div>
+                                    <h4 className="text-sm font-semibold text-slate-300 mb-2">Data Management</h4>
+                                    <p className="text-sm text-slate-400 mb-3">
+                                        Your progress, code, and settings are automatically saved.
+                                        You can clear all data to start fresh.
+                                    </p>
+                                    <button
+                                        onClick={resetAllData}
+                                        className="rounded-lg border border-red-600 bg-red-700 px-3 py-2 text-sm text-red-100 hover:bg-red-600 transition-colors"
+                                    >
+                                        🗑️ Clear All Data
+                                    </button>
+                                </div>
+
+                                <div>
+                                    <h4 className="text-sm font-semibold text-slate-300 mb-2">Current State</h4>
+                                    <div className="text-xs text-slate-400 space-y-1">
+                                        <div>Challenge: {challenge.title}</div>
+                                        <div>Language: {language}</div>
+                                        <div>Mode: {mode}</div>
+                                        <div>Attempts: {attemptCount}</div>
+                                        <div>NVIDIA Pack: {nvidiaPackLoaded ? 'Loaded' : 'Not loaded'}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </Panel>
                     </div>
                 )}
 
@@ -437,7 +599,7 @@ export default function NodeoApp() {
                             onChange={(e) => setChallengeId(e.target.value)}
                             className="w-full rounded-lg border border-slate-600 bg-slate-700 px-3 py-2 text-slate-200"
                         >
-                            {CHALLENGES.map((c) => (
+                            {challenges.map((c) => (
                                 <option key={c.id} value={c.id}>
                                     {c.topic}: {c.title}
                                 </option>

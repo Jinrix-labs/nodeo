@@ -1,0 +1,33 @@
+{
+  "id": "max-subarray-sum",
+  "topic": "Arrays",
+  "title": "Maximum Subarray Sum",
+  "difficulty": "advanced",
+  "tags": [
+    "bonus"
+  ],
+  "concept": "Use Kadane's algorithm to find the maximum sum of any contiguous subarray.",
+  "example": "Input:\n-2 1 -3 4 -1 2 1 -5 4\n\nOutput:\n6",
+  "prompt": "Return the maximum subarray sum using Kadane's Algorithm.",
+  "languages": {
+    "javascript": {
+      "starter": "const arr=[-2,1,-3,4,-1,2,1,-5,4];let maxSoFar=arr[0],cur=0;for(const x of arr){cur=Math.max(x,cur+x);maxSoFar=Math.max(maxSoFar,cur);}console.log(maxSoFar);",
+      "tests": [
+        {
+          "description": "classic kadane",
+          "run": "(()=>{__RESET__();const arr=[-2,1,-3,4,-1,2,1,-5,4];let maxSoFar=arr[0],cur=0;for(const x of arr){cur=Math.max(x,cur+x);maxSoFar=Math.max(maxSoFar,cur);}console.log(maxSoFar);return __LOGS__[0]==='6';})()"
+        }
+      ]
+    },
+    "python": {
+      "starter": "arr=list(map(int,input().split()))\nmax_so_far=arr[0]\ncurr=0\nfor x in arr:\n    curr=max(x,curr+x)\n    max_so_far=max(max_so_far,curr)\nprint(max_so_far)",
+      "tests": [
+        {
+          "description": "classic kadane",
+          "stdin": "-2 1 -3 4 -1 2 1 -5 4\n",
+          "expected_output": "6\n"
+        }
+      ]
+    }
+  }
+}

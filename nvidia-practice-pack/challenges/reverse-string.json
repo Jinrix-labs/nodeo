@@ -1,0 +1,53 @@
+{
+  "id": "reverse-string",
+  "topic": "Strings",
+  "title": "Reverse a String",
+  "difficulty": "easy",
+  "tags": [
+    "warmup"
+  ],
+  "concept": "Reverse the characters in a string.",
+  "example": "Input:\nhello\n\nOutput:\nolleh",
+  "prompt": "Read a string and print it in reverse order.",
+  "languages": {
+    "javascript": {
+      "starter": "const s = 'hello';\nconsole.log(s.split('').reverse().join(''));",
+      "tests": [
+        {
+          "description": "reverse hello",
+          "run": "(()=>{__RESET__();const s='hello';console.log(s.split('').reverse().join(''));return __LOGS__[0]==='olleh';})()"
+        }
+      ]
+    },
+    "python": {
+      "starter": "s = input()\nprint(s[::-1])",
+      "tests": [
+        {
+          "description": "reverse hello",
+          "stdin": "hello\n",
+          "expected_output": "olleh\n"
+        }
+      ]
+    },
+    "cpp": {
+      "starter": "#include <bits/stdc++.h>\nusing namespace std;\nint main(){string s;cin>>s;reverse(s.begin(),s.end());cout<<s<<endl;}",
+      "tests": [
+        {
+          "description": "reverse hello",
+          "stdin": "hello\n",
+          "expected_output": "olleh\n"
+        }
+      ]
+    },
+    "java": {
+      "starter": "import java.util.*;public class Main{public static void main(String[] args){Scanner sc=new Scanner(System.in);String s=sc.nextLine();System.out.println(new StringBuilder(s).reverse().toString());}}",
+      "tests": [
+        {
+          "description": "reverse hello",
+          "stdin": "hello\n",
+          "expected_output": "olleh\n"
+        }
+      ]
+    }
+  }
+}

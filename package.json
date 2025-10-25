@@ -5,10 +5,12 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
+        "prebuild": "npm run build:nvidia",
         "build": "tsc && vite build",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview",
-        "new:challenge": "node scripts/create-challenge.js"
+        "new:challenge": "node scripts/create-challenge.js",
+        "build:nvidia": "node scripts/build-nvidia-pack.js"
     },
     "dependencies": {
         "react": "^18.2.0",

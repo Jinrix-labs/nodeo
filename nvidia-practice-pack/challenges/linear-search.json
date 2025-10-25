@@ -1,0 +1,33 @@
+{
+  "id": "linear-search",
+  "topic": "Search",
+  "title": "Linear Search",
+  "difficulty": "easy",
+  "tags": [
+    "warmup"
+  ],
+  "concept": "Search for an element in an array using linear scan.",
+  "example": "Input:\n5\n1 2 3 4 5\n3\n\nOutput:\nFOUND",
+  "prompt": "Read n and n integers, then target x. Print FOUND if present, else NOT FOUND.",
+  "languages": {
+    "javascript": {
+      "starter": "const arr=[1,2,3,4,5];const x=3;console.log(arr.includes(x)?'FOUND':'NOT FOUND');",
+      "tests": [
+        {
+          "description": "found",
+          "run": "(()=>{__RESET__();const arr=[1,2,3,4,5];const x=3;console.log(arr.includes(x)?'FOUND':'NOT FOUND');return __LOGS__[0]==='FOUND';})()"
+        }
+      ]
+    },
+    "python": {
+      "starter": "n=int(input())\narr=list(map(int,input().split()))\nx=int(input())\nprint('FOUND' if x in arr else 'NOT FOUND')",
+      "tests": [
+        {
+          "description": "found",
+          "stdin": "5\n1 2 3 4 5\n3\n",
+          "expected_output": "FOUND\n"
+        }
+      ]
+    }
+  }
+}
